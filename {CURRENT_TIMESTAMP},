@@ -1,0 +1,35 @@
+[WARNING] The model name 'Dpoutgoings' was recognized as a plural, using the singular 'Dpoutgoing' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.
+      invoke  active_record
+   identical    db/migrate/20181128161852_create_dpoutgoings.rb
+   identical    app/models/dpoutgoing.rb
+      invoke    test_unit
+   identical      test/models/dpoutgoing_test.rb
+   identical      test/fixtures/dpoutgoings.yml
+      invoke  resource_route
+       route    resources :dpoutgoings
+      invoke  scaffold_controller
+   identical    app/controllers/dpoutgoings_controller.rb
+      invoke    erb
+       exist      app/views/dpoutgoings
+   identical      app/views/dpoutgoings/index.html.erb
+   identical      app/views/dpoutgoings/edit.html.erb
+   identical      app/views/dpoutgoings/show.html.erb
+   identical      app/views/dpoutgoings/new.html.erb
+   identical      app/views/dpoutgoings/_form.html.erb
+      invoke    test_unit
+   identical      test/controllers/dpoutgoings_controller_test.rb
+   identical      test/system/dpoutgoings_test.rb
+      invoke    helper
+   identical      app/helpers/dpoutgoings_helper.rb
+      invoke      test_unit
+      invoke    jbuilder
+   identical      app/views/dpoutgoings/index.json.jbuilder
+   identical      app/views/dpoutgoings/show.json.jbuilder
+   identical      app/views/dpoutgoings/_dpoutgoing.json.jbuilder
+      invoke  assets
+      invoke    coffee
+   identical      app/assets/javascripts/dpoutgoings.coffee
+      invoke    scss
+   identical      app/assets/stylesheets/dpoutgoings.scss
+      invoke  scss
+   identical    app/assets/stylesheets/scaffolds.scss

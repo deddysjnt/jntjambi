@@ -1,0 +1,36 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider"><span class="card-subtitle">Kelompok Barang (Entry/Edit)</span></div>
+<div class="card-body">
+	<%= form_for @category do |j| %>
+		
+	  <% if @category.errors.any? %>
+	  	<div id="notice_wrapper" class = "error">
+	  		<% @category.errors.full_messages.each do |pesan| %>
+	  			<p><%= pesan %></p><br>
+	  		<% end %>
+	  	</div>
+	  <% end %>
+	  
+	  <div class="field">
+		  <%= j.label :Kelompok_Barang %>
+		  <%= j.text_field :category_name ,class: 'form-control', autofocus: true %>
+	  </div>	  		
+	  <div class="field">
+		  <%= j.label :Keterangan %>
+		  <%= j.text_field :ingroup ,class: 'form-control', autofocus: true %>
+	  </div>	  		
+	  
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", categories_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+</div>
+</div>
+</div>
+</div>

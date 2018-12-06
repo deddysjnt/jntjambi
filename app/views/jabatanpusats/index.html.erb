@@ -1,0 +1,39 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-9"><h1>DATA JABATAN PUSAT</h1></div>
+		<div class="col-sm"><%= link_to "New Jabatan", new_jabatanpusat_path, class: $s3sukses %></div>
+	</div>
+	
+	<div class="table-responsive-sb">
+	<table class="table table-bordered table-hover">
+		<thead class="thead-dark">
+			<tr>
+				<th>Jabatan</th>
+				<th>Divisi</th>
+				<th class="text-right">Training</th>
+				<th class="text-right">Tetap</th>
+				<th class="text-right">T.Jabatan</th>
+				<th class="text-right">T.Masa Kerja</th>
+				<th>View</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @jabatanpusats.each do |j| %>
+			<tr>
+				<td><%= j.nama_jabatan_pusat %></td>
+				<td><%= j.divisi_kerja_pusat %></td>
+				<td class="text-right"><%= number_with_delimiter j.gapok_training_pusat %></td>
+				<td class="text-right"><%= number_with_delimiter j.gapok_tetap_pusat %></td>
+				<td class="text-right"><%= number_with_delimiter j.tunjangan_jabatan_pusat %></td>
+				<td class="text-right"><%= number_with_delimiter j.tunjangan_masa_kerja_pusat %></td>
+				<td><%= link_to "Edit", edit_jabatanpusat_path(j.id) %></td>
+				<td><%= link_to "Delete", jabatanpusat_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nama_jabatan_pusat}?"} %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+		<%= paginate @jabatanpusats%>
+		<%= link_to 'Back', root_path %>
+	</div>
+</div>

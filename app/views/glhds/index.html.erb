@@ -1,0 +1,39 @@
+<div class= "row">
+	<div class="col-9"><h1>DAFTAR JURNAL</h1></div>
+	<div class="col-sm"><%= link_to "New Jurnal", new_glhd_path, class: $s3sukses %></div>
+</div>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Nomor</th>
+			<th>Refrensi</th>
+			<th>Tanggal</th>
+			<th class="text-right">Debet</th>
+			<th class="text-right">Kredit</th>
+			<th class="text-right">+-</th>
+			<th>Keterangan</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @glhds.each do |j| %>
+		<tr>
+			<td><%= j.nomor %></td>
+			<td><%= j.noref %></td>
+			<td><%= j.tanggal %></td>
+			<td class="text-right"><%= number_with_delimiter j.total_d %></td>
+			<td class="text-right"><%= number_with_delimiter j.total_c %></td>
+			<td class="text-right"><%= number_with_delimiter j.total_d-j.total_c %></td>
+			<td><%= j.description %></td>
+			<td><%= link_to "Edit", edit_glhd_path(j.id) %></td>
+			<td><%= link_to "Delete", glhd_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nomor}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @glhds %>
+	<%= link_to 'Back', root_path %>
+</div>

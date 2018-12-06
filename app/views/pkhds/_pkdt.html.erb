@@ -1,0 +1,11 @@
+<tr>
+	<td>
+		<%= f.input_field :_destroy, as: :hidden %>
+		<%= link_to 'Delete', '#', class: 'remove_record' %>
+		</td>
+	<td><%= f.input :product_id, label: false %></td>
+	<td><%= f.input :product_name, label: false %></td>
+	<td><%= f.input :gudang_id, label: false %></td>
+	<td><%= f.input :qty, label: false %></td>
+	<td><%= f.input :keterangan, label: false %></td>
+</tr>

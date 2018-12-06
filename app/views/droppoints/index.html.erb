@@ -1,0 +1,54 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider row">
+		<div class="col-9 card-subtitle"><h1>DATA DROPPOINT</h1></div>
+		<div class="col-sm card-subtitle"><%= link_to "New Droppoint", new_droppoint_path, class: $s3sukses %></div>
+	</div>
+<div class="card-body">
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Kode</th>
+			<th>Nama</th>
+			<th>Alamat</th>
+			<th>Telp</th>
+			<th>HP</th>
+			<th>PIC</th>
+			<th>Tahun Buka</th>
+			<th>Rute</th>
+			<th>Jam Operasi</th>
+			<th>Kas</th>
+			<th>Bank</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @droppoints.each do |j| %>
+		<tr>
+			<td><%= j.kode_dp %></td>
+			<td><%= j.nama_dp %></td>
+			<td><%= j.alamat %></td>
+			<td><%= j.telp %></td>
+			<td><%= j.mobile_phone %></td>
+			<td><%= j.pic %></td>
+			<td><%= j.tahun_buka.try(:strftime,("%d/%m/%Y")) %></td>
+			<td><%= j.rute_sprinter %></td>
+			<td><%= j.jam_operasi %></td>
+			<td><%= j.kasir_kas_name %></td>
+			<td><%= j.kasir_bank_name %></td>
+			<td><%= link_to "Edit", edit_droppoint_path(j.id) %></td>
+			<td><%= link_to "Delete", droppoint_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nama_dp}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @droppoints %>
+	<%= link_to 'Back', root_path %>
+</div>
+</div>
+</div>
+</div>
+</div>

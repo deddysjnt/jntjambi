@@ -1,0 +1,2 @@
+json.extract! gtw_sortir, :id, :kegiatan, :tanggal, :manifest_id, :bagging_id, :droppoint_asal, :kg_gtw, :awb_gtw, :kg_e3, :awb_e3, :kg_selisih_e3, :awb_selisih_e3, :fresh_paket, :agent_id, :droppoint_tujuan, :tanggal_dp, :awb_dp, :kg_dp, :awb_selisih_dp, :kg_selisih_dp, :gtw_team_kerja, :gtw_team_shift, :description, :tanggal_approve, :user_approve, :user_add, :user_edit, :ip_address, :flag, :created_at, :updated_at
+json.url gtw_sortir_url(gtw_sortir, format: :json)

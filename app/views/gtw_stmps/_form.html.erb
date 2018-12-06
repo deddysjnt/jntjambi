@@ -1,0 +1,41 @@
+
+<%= simple_form_for(@gtw_stmp) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :kegiatan %>
+    <%= f.input :tanggal %>
+    <%= f.input :manifest_id %>
+    <%= f.input :noref %>
+    <%= f.input :qty_bagging_fisik %>
+    <%= f.input :kg_fisik %>
+    <%= f.input :awb_fisik %>
+    <%= f.input :qty_bagging_manifest %>
+    <%= f.input :kg_manisfet %>
+    <%= f.input :awb_manifest %>
+    <%= f.input :selisih_bagging %>
+    <%= f.input :selisih_kg %>
+    <%= f.input :selisih_awb %>
+    <%= f.input :fresh_paket %>
+    <%= f.input :agent_id %>
+    <%= f.input :droppoint_id %>
+    <%= f.input :diterima_dari %>
+    <%= f.input :diserahkan_oleh %>
+    <%= f.input :gtw_team_kerja %>
+    <%= f.input :gtw_team_shift %>
+    <%= f.input :kendaraan_id %>
+    <%= f.input :transporter_team %>
+    <%= f.input :description %>
+    <%= f.input :tanggal_approve %>
+    <%= f.input :user_approve %>
+    <%= f.input :user_add %>
+    <%= f.input :user_edit %>
+    <%= f.input :ip_address %>
+    <%= f.input :flag %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

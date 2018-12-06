@@ -1,0 +1,2 @@
+class Dpbagging < ApplicationRecord
+end

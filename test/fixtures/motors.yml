@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  karyawan_id: 1
+  nopol: MyString
+  spect: MyText
+  tangga_register: 2018-11-28 19:23:58
+  km_reg: 1
+  user_add: 1
+  user_edit: 1
+  user_app: 1
+  tanggal_app: 2018-11-28 19:23:58
+
+two:
+  karyawan_id: 1
+  nopol: MyString
+  spect: MyText
+  tangga_register: 2018-11-28 19:23:58
+  km_reg: 1
+  user_add: 1
+  user_edit: 1
+  user_app: 1
+  tanggal_app: 2018-11-28 19:23:58

@@ -1,0 +1,2 @@
+json.extract! gtw_stmp, :id, :kegiatan, :tanggal, :manifest_id, :noref, :qty_bagging_fisik, :kg_fisik, :awb_fisik, :qty_bagging_manifest, :kg_manisfet, :awb_manifest, :selisih_bagging, :selisih_kg, :selisih_awb, :fresh_paket, :agent_id, :droppoint_id, :diterima_dari, :diserahkan_oleh, :gtw_team_kerja, :gtw_team_shift, :kendaraan_id, :transporter_team, :description, :tanggal_approve, :user_approve, :user_add, :user_edit, :ip_address, :flag, :created_at, :updated_at
+json.url gtw_stmp_url(gtw_stmp, format: :json)

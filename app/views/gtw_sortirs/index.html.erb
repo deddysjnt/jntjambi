@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gtw Sortirs</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Kegiatan</th>
+      <th>Tanggal</th>
+      <th>Manifest</th>
+      <th>Bagging</th>
+      <th>Droppoint asal</th>
+      <th>Kg gtw</th>
+      <th>Awb gtw</th>
+      <th>Kg e3</th>
+      <th>Awb e3</th>
+      <th>Kg selisih e3</th>
+      <th>Awb selisih e3</th>
+      <th>Fresh paket</th>
+      <th>Agent</th>
+      <th>Droppoint tujuan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gtw_sortirs.each do |gtw_sortir| %>
+      <tr>
+        <td><%= gtw_sortir.kegiatan %></td>
+        <td><%= gtw_sortir.tanggal %></td>
+        <td><%= gtw_sortir.manifest_id %></td>
+        <td><%= gtw_sortir.bagging_id %></td>
+        <td><%= gtw_sortir.droppoint_asal %></td>
+        <td><%= gtw_sortir.kg_gtw %></td>
+        <td><%= gtw_sortir.awb_gtw %></td>
+        <td><%= gtw_sortir.kg_e3 %></td>
+        <td><%= gtw_sortir.awb_e3 %></td>
+        <td><%= gtw_sortir.kg_selisih_e3 %></td>
+        <td><%= gtw_sortir.awb_selisih_e3 %></td>
+        <td><%= gtw_sortir.fresh_paket %></td>
+        <td><%= gtw_sortir.agent_id %></td>
+        <td><%= gtw_sortir.droppoint_tujuan %></td>
+        <td><%= link_to 'Show', gtw_sortir %></td>
+        <td><%= link_to 'Edit', edit_gtw_sortir_path(gtw_sortir) %></td>
+        <td><%= link_to 'Destroy', gtw_sortir, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Gtw Sortir', new_gtw_sortir_path %>

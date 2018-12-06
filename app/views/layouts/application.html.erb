@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='id'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JNT-Express</title>
+    <%= favicon_link_tag 'logo-fav.png' %>
+    <%= stylesheet_link_tag     'application', media: 'all', 'data-turbolinks-track': "reload" %>
+    <%= javascript_include_tag  'application', 'data-turbolinks-track': "reload" %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  </head>
+    <body controller=<%= controller_name %> action=<%= action_name %>">
+    <%# content_tag :body, data: {action: action_name, controller: controller_name } do %>
+    <header>
+        <% if user_signed_in? %>
+           <%= render 'layouts/header' %>
+        <% end %>
+    </header>
+    <main role="main">
+        <div class="container-fluid mt-5 pt-3">
+            <%= render 'layouts/notisbs4' %>
+            <%= yield %>
+        </div>
+    </main>
+    <footer>
+        <%= render 'layouts/footer' %>
+    </footer>
+  </body>
+</html>

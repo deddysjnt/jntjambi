@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-12">
+	<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-body">
+	<%= form_for @glhd do |hd| %>
+
+	  <% if @glhd.errors.any? %>
+	  	<% @glhd.errors.full_messages.each do |pesan| %>
+	  		<div class = "row alert alert-danger"><%= pesan %></div>
+	  	<% end %>
+	  <% end %>
+	  <div class="form-input">
+	    <div class="row">
+		  	<div class="col-1">GL Nomor</div>
+		  	<div class="col-sm"><%= hd.text_field :nomor, class: 'form-control' , type: 'text', autofocus: true, disabled: true %></div>
+		  	<div class="col-1">Tanggal</div>
+		  	<div class="col-sm"><%= hd.text_field :tanggal, class: 'form-control datepicker' , type: 'text', autofocus: true %></div>
+		  	<div class="col-1">Refrensi</div>
+		  	<div class="col-sm"><%= hd.text_field :noref, class: 'form-control' , type: 'text', autofocus: true %></div>
+	    </div>
+	  </div>	
+	
+
+	  <br>
+		<div class="table-responsive">
+		<table class="table table-bordered table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th>Kode</th>
+					<th>Acno</th>
+					<th>Perkiraan</th>
+					<th>Keterangan</th>
+					<th>Debet</th>
+					<th>Kredit</th>
+					<th>Del</th>
+				</tr>
+			</thead>
+			<tbody class="fields">
+				<%= hd.fields_for :gldts do |builder| %>
+					<%= render "gldt", :f => builder %>
+				<% end %>
+			</tbody>
+		</table>
+		</div>
+	  <br>
+ 		
+		<div class="row">
+			<div class="col-6"></div>
+			<div class="col-2">Total</div>
+			<div class="col-sm"><%= hd.text_field :total_d, class: 'form-control' , type: 'number', readonly: "true" %></div>
+			<div class="col-sm"><%= hd.text_field :total_c, class: 'form-control' , type: 'number', readonly: "true" %></div>
+		</div>
+
+	  <br>
+	  <div class="row">
+			<div class="col-1">Keterangan</div>
+			<div class="col-6"><%= hd.text_area :description, row: 2, class: 'form-control' , type: 'text', autofocus: true %></div>
+	    <div class="col-sm"><%= hd.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", glhds_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+	</div>
+	</div>
+  </div>
+</div>

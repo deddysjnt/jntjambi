@@ -1,0 +1,90 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider"><span class="card-subtitle">BAWA PAKET (Entry/Edit)</span></div>
+<div class="card-body">
+	<%= form_for @sprinter_bawa do |j| %>
+
+	  <% if @sprinter_bawa.errors.any? %>
+	  	<% @sprinter_bawa.errors.full_messages.each do |pesan| %>
+	  		<div class = "row alert alert-danger"><%= pesan %></div>
+	  	<% end %>
+	  <% end %>
+	  	<%= j.text_field :droppoint_id, hidden: true, class:"droppoint_id" %>
+	  	<%= j.text_field :jabatan_id, hidden: true, class:"jabatan_id" %>
+	  	<%= j.text_field :nama_jabatan, hidden: true, class:"nama_jabatan" %>
+	  	<%= j.text_field :karyawan_id, hidden: true, class:"karyawan_id" %>
+	  	<%= j.text_field :awb_ppcash, hidden: true, class:"awb_ppcash" %>
+	    <div class="row">
+		  	<div class="col-2">Sprinter</div>
+		  	<div class="col-4"><%= j.text_field :nama_karyawan, class: 'form-control karyawan_to_sprinter' , type: 'text', autofocus: true, required: "" %></div>
+		  	<div class="col-2">Tanggal</div>
+		  	<div class="col-sm"><%= j.text_field :tanggal, class: 'form-control datepicker' , type: 'text', autofocus: true %></div>
+	    </div>
+	  <div class="dropdown-divider"></div>
+	    <div class="row">
+		  	<div class="col-2">DP</div>
+		  	<div class="col-4"><%= j.text_field :nama_dp, class: 'form-control nama_dp_to_droppoint_id' , type: 'text', autofocus: true, required: "" %></div>
+		  	<div class="col-2">Form</div>
+		  	<div class="col-sm"><%= j.text_field :nomor_form, class: 'form-control' , type: 'text', autofocus: true %></div>
+		  </div>
+	  <div class="dropdown-divider"></div>
+	    <div class="row">
+		  	<div class="col-2">Total Bawa</div>
+		  	<div class="col-4"><%= j.text_field :awb_bawa, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+		  	<div class="col-2">KM-Start</div>
+		  	<div class="col-sm"><%= j.text_field :km_start, class: 'form-control' , type: 'number', autofocus: true %></div>
+	    </div>
+
+	  <div class="dropdown-divider"></div>
+	    <div class="row">
+		  	<div class="col-2"></div>
+		  	<div class="col-2">AWB COD</div>
+		  	<div class="col-2">AWB DFOD</div>
+		  	<div class="col-2">POP AWB-PPCASH</div>
+		  	<div class="col-2">POP AWB-DFOD</div>
+		  	<div class="col-2">POP AWB-COD</div>
+	    </div>	  
+	    <div class="row">
+	    	<div class="col-2"></div>
+		  	<div class="col-2"><%= j.text_field :awb_cod, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+		  	<div class="col-2"><%= j.text_field :awb_dfod, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+		  	<div class="col-2"><%= j.text_field :pop_awb_ppcash, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+		  	<div class="col-2"><%= j.text_field :pop_awb_dfod, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+		  	<div class="col-2"><%= j.text_field :pop_awb_cod, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+	    </div>
+	  <div class="dropdown-divider"></div>
+	    <br>
+	    <div class="row">
+	    	<div class="col-lg-6">
+	    		<div class="row">
+			  		<div class="col-4">NILAI  C O D</div>
+			  		<div class="col-sm"><%= j.text_field :nilai_cod, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+		    	</div>
+		    	<br>
+			    <div class="row">
+				  	<div class="col-4">NILAI  D F O D</div>
+				  	<div class="col-sm"><%= j.text_field :nilai_dfod, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+			    </div>	    	  
+		    </div>
+		    <div class="col-lg-6">
+			    <div class="row">
+						<div class="col-4">Keterangan</div>
+						<div class="col-sm"><%= j.text_area :description, class: 'form-control', row: 4, type: 'text', autofocus: true %></div>
+			    </div>
+		    </div>
+		  </div>	
+	        	  
+
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <button id="myBtn" type="submit" name="commit" class= "col-sm <%= $s3sukses %>" >Simpan Data</button>
+	    <div class="col-sm"><%= link_to "Batal", sprinter_bawas_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+</div>
+</div>
+</div>
+</div>

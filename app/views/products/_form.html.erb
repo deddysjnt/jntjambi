@@ -1,0 +1,69 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider"><span class="card-subtitle">Product (Entry/Edit)</span></div>
+<div class="card-body">
+	<%= form_for @product do |j| %>
+
+	  <% if @product.errors.any? %>
+	  	<% @product.errors.full_messages.each do |pesan| %> 
+	  		<div class = "row alert alert-danger"><%= pesan %></div>
+	  	<% end %>
+	  <% end %>
+	  
+	  <div class="row">
+	  	<div class="col-6">
+	  	  <div class="field">
+		  	<%= j.label :Nama_Barang %>
+		  	<%= j.text_field :product_name, class: 'form-control' , type: 'text', autofocus: true%>
+		  </div>	  			  		
+	  	</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col-6">
+	  	  <div class="field">
+		  	<%= j.label :Barcode %>
+		  	<%= j.text_field :barcode, class: 'form-control' , type: 'text', autofocus: true%>
+		  </div>	  			  		
+	  	</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col-2">
+	  	  <div class="field">
+		  	<%= j.label :Satuan %>
+		  	<%= j.select(:satuan, S3var::SATUAN,{},{class: "input-group-prepend custom-select", autofocus: true}) %>
+		  </div>	  			  		
+	  	</div>
+	  	<div class="col-4">
+	  	  <div class="field">
+		  	<%= j.label :Tracking %>
+		  	<%= j.select(:tipe, S3var::TRACKING,{},{class: "input-group-prepend custom-select", autofocus: true}) %>
+		  </div>	  			  		
+	  	</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col-6">
+		  <div class="field">
+		  	<%= j.label :Kategory_Input %>
+		  	<%= j.text_field :category_name, class: 'form-control categories' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  	<div class="col-6">
+	  	  <div class="field">
+		  	<%= j.label :Description %>
+		  	<%= j.text_area :description, row: 4, class: 'form-control' , type: 'text', autofocus: true%>
+		  </div>
+		</div>	  			  		
+	  </div>  
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", products_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,9 @@
+<p>
+  Name: <%= f.text_field :name %>
+</p>
+<div id="pulsas">
+  <%= render :partial => 'pulsa', :collection => @orderpulsa.pulsas %>
+</div>
+<p><%= add_pulsa_link "Add a pulsa" %></p>
+
+

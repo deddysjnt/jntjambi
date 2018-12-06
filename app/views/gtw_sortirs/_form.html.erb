@@ -1,0 +1,48 @@
+
+<%= simple_form_for @gtw_sortir, wrapper: :horizontal_form do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :kegiatan, as: :radio_buttons, collection: S3var::KEGIATAN, wrapper: :vertical_collection_inline %>
+            <%= f.input :tanggal %>
+            <%= f.input :manifest_id %>
+            <%= f.input :bagging_id %>
+            <%= f.input :droppoint_asal %>
+            <%= f.input :kg_gtw %>
+            <%= f.input :awb_gtw %>
+            <%= f.input :kg_e3 %>
+            <%= f.input :awb_e3 %>
+            <%= f.input :kg_selisih_e3 %>
+            <%= f.input :awb_selisih_e3 %>
+            <%= f.input :fresh_paket %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :agent_id, input_html: { class: 'agent' } %>
+            <%= f.input :droppoint_tujuan, input_html: { class: 'droppoint' } %>
+            <%= f.input :tanggal_dp %>
+            <%= f.input :awb_dp %>
+            <%= f.input :kg_dp %>
+            <%= f.input :awb_selisih_dp %>
+            <%= f.input :kg_selisih_dp %>
+            <%= f.input :gtw_team_kerja %>
+            <%= f.input :gtw_team_shift %>
+            <%= f.input :description %>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,46 @@
+<%# if @jabatan.errors.any? %>
+	<%# @jabatan.errors.full_messages.each do |pesanerr| %>
+		<%#= pesanerr, class: "alert alert-danger" %>
+	<%# end %> 
+<%# end %>
+
+	<%= form_for @jabatanpusat do |j| %>
+	  <div class="row">
+	    <div class="col-2">Nama Jabatan</div>
+	    <div class="col-4"><%= j.text_field :nama_jabatan_pusat, class: 'form-control' , type: 'text', placeholder: 'Ex.Finance', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-2">Divisi Kerja</div>
+	    <div class="col-4"><%= j.select(:divisi_kerja_pusat, S3var::DIVISI_KERJA,{},{class: "input-group-prepend custom-select", autofocus: true}) %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Gaji Masa Training</div>
+	    <div class="col-4"><%= j.number_field :gapok_training_pusat, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-2">Gaji Karyawan Tetap</div>
+	    <div class="col-4"><%= j.number_field :gapok_tetap_pusat, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Tunjangan Jabatan</div>
+	    <div class="col-4"><%= j.number_field :tunjangan_jabatan_pusat, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-2">Tunjangan Masa Kerja</div>
+	    <div class="col-4"><%= j.number_field :tunjangan_masa_kerja_pusat, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+		
+		<div class="row dropdown-divider divider"></div>
+	  
+	    <br>
+	  <div class="row">
+	    <div class="col-3 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", jabatanpusats_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+

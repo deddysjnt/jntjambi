@@ -1,0 +1,45 @@
+<div class= "row">
+	<div class="col-9"><h1>DATA KARYAWAN</h1></div>
+	<div class="col-sm"><%= link_to "New Karyawan", new_karyawan_path, class: $s3sukses %></div>
+</div>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Nama</th>
+			<th>Nik</th>
+			<th>JK</th>
+			<th>Berkas</th>
+			<th>Agama</th>
+			<th>DP</th>
+			<th>Jabatan</th>
+			<th>Kas</th>
+			<th>Masuk</th>
+			<th>Resign</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @karyawans.each do |j| %>
+		<tr>
+			<td><%= j.nama_karyawan %></td>
+			<td><%= j.nik %></td>
+			<td><%= j.jenis_kelamin %></td>
+			<td><%= j.lokasi_berkas %></td>
+			<td><%= j.agama %></td>
+			<td><%= j.nama_dp %></td>
+			<td><%= j.nama_jabatan %></td>
+			<td><%= j.kasir_kas_name %></td>
+			<td><%= j.tanggal_masuk.try(:strftime, "%d/%m/%Y") %></td>
+			<td><%= j.tanggal_resign.try(:strftime, "%d/%m/%Y") %></td>
+			<td><%= link_to "Edit", edit_karyawan_path(j.id) %></td>
+			<td><%= link_to "Delete", karyawan_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nama_karyawan}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @karyawans %>
+	<%= link_to 'Back', root_path %>
+</div>

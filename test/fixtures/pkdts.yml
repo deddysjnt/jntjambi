@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pkhd: 
+  product: 
+  gudang: 
+  keterangan: MyString
+  qty: 9.99
+  satuan: MyString
+  hpp_fifo: 9.99
+  entry_pos_product: 1
+
+two:
+  pkhd: 
+  product: 
+  gudang: 
+  keterangan: MyString
+  qty: 9.99
+  satuan: MyString
+  hpp_fifo: 9.99
+  entry_pos_product: 1

@@ -1,0 +1,41 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-9"><h1>DATA JABATAN</h1></div>
+		<div class="col-sm"><%= link_to "New Jabatan", new_jabatan_path, class: $s3sukses %></div>
+	</div>
+	
+	<div class="table-responsive-sb">
+	<table class="table table-bordered table-hover">
+		<thead class="thead-dark">
+			<tr>
+				<th>Jabatan</th>
+				<th>Divisi</th>
+				<th class="text-right">BBM</th>
+				<th class="text-right">Pulsa</th>
+				<th class="text-right">Service  3B</th>
+				<th class="text-right">Service  6B</th>
+				<th class="text-right">Service 12B</th>
+				<th>View</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @jabatans.each do |j| %>
+			<tr>
+				<td><%= j.nama_jabatan %></td>
+				<td><%= j.divisi_kerja %></td>
+				<td class="text-right"><%= number_with_delimiter j.claim_bbm_set %></td>
+				<td class="text-right"><%= number_with_delimiter j.claim_pulsa_limit_1bulan %></td>
+				<td class="text-right"><%= number_with_delimiter j.claim_service_limit_3bulan %></td>
+				<td class="text-right"><%= number_with_delimiter j.claim_service_limit_6bulan %></td>
+				<td class="text-right"><%= number_with_delimiter j.claim_service_limit_12bulan %></td>
+				<td><%= link_to "Edit", edit_jabatan_path(j.id) %></td>
+				<td><%= link_to "Delete", jabatan_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nama_jabatan}?"} %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+		<%= paginate @jabatans%>
+		<%= link_to 'Back', root_path %>
+	</div>
+</div>

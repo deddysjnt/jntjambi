@@ -1,0 +1,67 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomor: MyString
+  karyawan_id: 1
+  droppoint_id: 1
+  tanggal: 2018-11-28 23:44:04
+  transaksi: MyString
+  awb_total: 1
+  uang_masuk: 1
+  perkiraan_id: 1
+  awb_ppcash_manual: 1
+  awb_dfod_manual: 1
+  awb_cod_manual: 1
+  awb_pppm_manual: 1
+  awb_ppcash_online: 1
+  awb_dfod_online: 1
+  awb_cod_online: 1
+  awb_pppm_online: 1
+  nilai_ppcash_manual: 1.5
+  nilai_dfod_manual: 1.5
+  nilai_cod_manual: 1.5
+  nilai_pppm_manual: 1.5
+  nilai_ppcash_online: 1.5
+  nilai_dfod_online: 1.5
+  nilai_cod_online: 1.5
+  nilai_pppm_online: 1.5
+  description: MyText
+  tanggal_approve: 2018-11-28 23:44:04
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1
+
+two:
+  nomor: MyString
+  karyawan_id: 1
+  droppoint_id: 1
+  tanggal: 2018-11-28 23:44:04
+  transaksi: MyString
+  awb_total: 1
+  uang_masuk: 1
+  perkiraan_id: 1
+  awb_ppcash_manual: 1
+  awb_dfod_manual: 1
+  awb_cod_manual: 1
+  awb_pppm_manual: 1
+  awb_ppcash_online: 1
+  awb_dfod_online: 1
+  awb_cod_online: 1
+  awb_pppm_online: 1
+  nilai_ppcash_manual: 1.5
+  nilai_dfod_manual: 1.5
+  nilai_cod_manual: 1.5
+  nilai_pppm_manual: 1.5
+  nilai_ppcash_online: 1.5
+  nilai_dfod_online: 1.5
+  nilai_cod_online: 1.5
+  nilai_pppm_online: 1.5
+  description: MyText
+  tanggal_approve: 2018-11-28 23:44:04
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1

@@ -1,0 +1,29 @@
+User.joins(:appointments)
+    .where(appointments: { type: 'typeB' })
+    .group('users.id')
+    .order('count(appointments.id) DESC')
+
+
+	  <div class="row">
+	    <div class="col-3">Droppoint</div>
+	    <div class="col-sm"><select name="karyawan[droppoint_id]" id="karyawan_droppoint_id">
+		    <option value="1">ABADI</option>
+			<option value="2">RAJAWALI</option></select>
+		</div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Jabatan</div>
+	    <div class="col-4"><select name="karyawan[jabatan_id]" id="karyawan_jabatan_id">
+		    <option value="1">Sprinter</option>
+			<option value="2">Driver Jalanan</option>
+			<option value="4">Teknisi</option>
+			<option value="6">ssss</option></select>
+		</div>
+	    <div class="col-2">Jabatan Pusat</div>
+	    <div class="col-sm"><select name="karyawan[jabatan_pusat]" id="karyawan_jabatan_pusat">
+		    <option value="1">Sprinter</option>
+			<option value="2">Transpoter</option>
+			<option value="4">Transporter</option>
+			<option value="6">sss</option></select>
+		</div>
+	  </div>

@@ -1,0 +1,40 @@
+<div class= "row">
+	<div class="col-9"><h1>DAFTAR ACCOUNT JURNAL</h1></div>
+	<div class="col-sm"><%= link_to "New Acoount", new_perkiraan_path, class: $s3sukses %></div>
+</div>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Acno</th>
+			<th>Nama Perkiraan</th>
+			<th>Level</th>
+			<th>Buku</th>
+			<th>Balance</th>
+			<th>Jurnal</th>
+			<th>Urutan Laporan</th>
+			<th>Prioritas Audit</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @perkiraans.each do |j| %>
+		<tr>
+			<td><%= j.acno %></td>
+			<td><%= j.nama_perkiraan %></td>
+			<td><%= j.level_view %></td>
+			<td><%= j.buku %></td>
+			<td><%= j.normal_balance %></td>
+			<td><%= j.ac_detail %></td>
+			<td><%= j.sticky_order_view %></td>
+			<td><%= j.sticky_order_audit %></td>
+			<td><%= link_to "Edit", edit_perkiraan_path(j.id) %></td>
+			<td><%= link_to "Delete", perkiraan_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nama_perkiraan}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @perkiraans %>
+</div>

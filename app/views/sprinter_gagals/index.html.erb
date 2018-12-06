@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sprinter Gagals</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Sprinter kembali</th>
+      <th>Tanggal</th>
+      <th>Karyawan</th>
+      <th>Droppoint</th>
+      <th>Awb</th>
+      <th>Masalah</th>
+      <th>Paket</th>
+      <th>Description</th>
+      <th>Tanggal approve</th>
+      <th>User approve</th>
+      <th>User add</th>
+      <th>User edit</th>
+      <th>Ip address</th>
+      <th>Flag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sprinter_gagals.each do |sprinter_gagal| %>
+      <tr>
+        <td><%= sprinter_gagal.sprinter_kembali_id %></td>
+        <td><%= sprinter_gagal.tanggal %></td>
+        <td><%= sprinter_gagal.karyawan_id %></td>
+        <td><%= sprinter_gagal.droppoint_id %></td>
+        <td><%= sprinter_gagal.awb %></td>
+        <td><%= sprinter_gagal.masalah %></td>
+        <td><%= sprinter_gagal.paket %></td>
+        <td><%= sprinter_gagal.description %></td>
+        <td><%= sprinter_gagal.tanggal_approve %></td>
+        <td><%= sprinter_gagal.user_approve %></td>
+        <td><%= sprinter_gagal.user_add %></td>
+        <td><%= sprinter_gagal.user_edit %></td>
+        <td><%= sprinter_gagal.ip_address %></td>
+        <td><%= sprinter_gagal.flag %></td>
+        <td><%= link_to 'Show', sprinter_gagal %></td>
+        <td><%= link_to 'Edit', edit_sprinter_gagal_path(sprinter_gagal) %></td>
+        <td><%= link_to 'Destroy', sprinter_gagal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Sprinter Gagal', new_sprinter_gagal_path %>

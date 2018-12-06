@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gtw Stmps</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Kegiatan</th>
+      <th>Tanggal</th>
+      <th>Manifest</th>
+      <th>Noref</th>
+      <th>Qty bagging fisik</th>
+      <th>Kg fisik</th>
+      <th>Awb fisik</th>
+      <th>Qty bagging manifest</th>
+      <th>Kg manisfet</th>
+      <th>Awb manifest</th>
+      <th>Selisih bagging</th>
+      <th>Selisih kg</th>
+      <th>Selisih awb</th>
+      <th>Fresh paket</th>
+      <th>Agent</th>
+      <th>Droppoint</th>
+      <th>Diterima dari</th>
+      <th>Diserahkan oleh</th>
+      <th>Gtw team kerja</th>
+      <th>Gtw team shift</th>
+      <th>Kendaraan</th>
+      <th>Transporter team</th>
+      <th>Description</th>
+      <th>Tanggal approve</th>
+      <th>User approve</th>
+      <th>User add</th>
+      <th>User edit</th>
+      <th>Ip address</th>
+      <th>Flag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gtw_stmps.each do |gtw_stmp| %>
+      <tr>
+        <td><%= gtw_stmp.kegiatan %></td>
+        <td><%= gtw_stmp.tanggal %></td>
+        <td><%= gtw_stmp.manifest_id %></td>
+        <td><%= gtw_stmp.noref %></td>
+        <td><%= gtw_stmp.qty_bagging_fisik %></td>
+        <td><%= gtw_stmp.kg_fisik %></td>
+        <td><%= gtw_stmp.awb_fisik %></td>
+        <td><%= gtw_stmp.qty_bagging_manifest %></td>
+        <td><%= gtw_stmp.kg_manisfet %></td>
+        <td><%= gtw_stmp.awb_manifest %></td>
+        <td><%= gtw_stmp.selisih_bagging %></td>
+        <td><%= gtw_stmp.selisih_kg %></td>
+        <td><%= gtw_stmp.selisih_awb %></td>
+        <td><%= gtw_stmp.fresh_paket %></td>
+        <td><%= gtw_stmp.agent_id %></td>
+        <td><%= gtw_stmp.droppoint_id %></td>
+        <td><%= gtw_stmp.diterima_dari %></td>
+        <td><%= gtw_stmp.diserahkan_oleh %></td>
+        <td><%= gtw_stmp.gtw_team_kerja %></td>
+        <td><%= gtw_stmp.gtw_team_shift %></td>
+        <td><%= gtw_stmp.kendaraan_id %></td>
+        <td><%= gtw_stmp.transporter_team %></td>
+        <td><%= gtw_stmp.description %></td>
+        <td><%= gtw_stmp.tanggal_approve %></td>
+        <td><%= gtw_stmp.user_approve %></td>
+        <td><%= gtw_stmp.user_add %></td>
+        <td><%= gtw_stmp.user_edit %></td>
+        <td><%= gtw_stmp.ip_address %></td>
+        <td><%= gtw_stmp.flag %></td>
+        <td><%= link_to 'Show', gtw_stmp %></td>
+        <td><%= link_to 'Edit', edit_gtw_stmp_path(gtw_stmp) %></td>
+        <td><%= link_to 'Destroy', gtw_stmp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Gtw Stmp', new_gtw_stmp_path %>

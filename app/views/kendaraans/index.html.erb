@@ -1,0 +1,50 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider row">
+		<div class="col-9 card-subtitle">Daftar Kendaraan</div>
+		<div class="col-sm card-subtitle"><%= link_to "New Kendaraan", new_kendaraan_path, class: $s3sukses %></div>
+	</div>
+<div class="card-body">
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Nopol</th>
+			<th>Aset</th>
+			<th>Spec</th>
+			<th>Rute</th>
+			<th>Parkir</th>
+			<th>Service</th>
+			<th>KIR</th>
+			<th>PAJAK</th>
+			<th>STNK</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @kendaraans.each do |j| %>
+		<tr>
+			<td><%= j.nopol %></td>
+			<td><%= j.kode_aset %></td>
+			<td><%= j.spec_mobil %></td>
+			<td><%= j.rute %></td>
+			<td><%= j.parkir %></td>
+			<td><%= j.km_next_service %></td>
+			<td><%= j.tanggal_kir.strftime("%d/%m/%Y") %></td>
+			<td><%= j.tanggal_pajak.strftime("%d/%m/%Y") %></td>
+			<td><%= j.tanggal_pajak.strftime("%d/%m/%Y") %></td>
+			<td><%= link_to "Edit", edit_kendaraan_path(j.id) %></td>
+			<td><%= link_to "Delete", kendaraan_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nopol}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @kendaraans %>
+</div>
+</div>
+</div>
+</div>
+</div>

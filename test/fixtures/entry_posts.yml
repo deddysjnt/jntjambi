@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaksi: 
+  last_num: 
+  format_key: MyString
+
+two:
+  transaksi: 
+  last_num: 
+  format_key: MyString

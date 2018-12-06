@@ -1,0 +1,77 @@
+
+<%= simple_form_for @dpoutgoing, wrapper: :vertical_form  do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :transaksi, as: :radio_buttons, collection: S3var::TRANSAKSI_DP, wrapper: :horizontal_collection_inline %>
+            <%= f.input :awb_total %>
+            <%= f.input :uang_masuk %>
+            <%= f.input :perkiraan_id %>          
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :nomor %>
+            <%= f.input :karyawan_id, input_html: { class: "karyawan" } %>
+            <%= f.input :droppoint_id, input_html: { class: "droppoint" } %>
+            <%= f.input :tanggal %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :awb_ppcash_manual %>
+            <%= f.input :nilai_ppcash_manual %>
+            <%= f.input :awb_ppcash_online %>
+            <%= f.input :nilai_ppcash_online %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :awb_dfod_manual %>
+            <%= f.input :nilai_dfod_manual %>
+            <%= f.input :awb_dfod_online %>
+            <%= f.input :nilai_dfod_online %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :awb_pppm_manual %>
+            <%= f.input :nilai_pppm_manual %>
+            <%= f.input :awb_pppm_online %>
+            <%= f.input :nilai_pppm_online %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :awb_cod_manual %>   
+            <%= f.input :awb_cod_online %>  
+            <%= f.input :nilai_cod_manual %>  
+            <%= f.input :nilai_cod_online %>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

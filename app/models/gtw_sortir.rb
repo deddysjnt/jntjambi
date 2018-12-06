@@ -1,0 +1,2 @@
+class GtwSortir < ApplicationRecord
+end

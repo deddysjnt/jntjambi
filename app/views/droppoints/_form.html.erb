@@ -1,0 +1,68 @@
+<%= form_for @droppoint do |j| %>
+
+	  <% if @droppoint.errors[:nama_dp].any? %>
+	  	<div class = "row alert alert-danger"><%= "Nama Droppoint : #{@droppoint.errors[:nama_dp].first}" %></div>
+	  <% end %>
+
+	  <div class="row">
+	  	<div class="col-3">Nama Droppoint</div>
+	    <div class="col-4"><%= j.text_field :nama_dp, class: 'form-control' , type: 'text', placeholder: 'Ex.Abadi', autofocus: true, :"required"=>"", :"data-parsley-minlength"=>"6" %></div>
+	    <div class="col-2">Kode</div>
+	    <div class="col-sm"><%= j.text_field :kode_dp, class: 'form-control' , type: 'text', placeholder: 'Ex.DJB-01', autofocus: true %></div>
+	  </div>
+ 	  
+ 	  <div class="row">
+	    <div class="col-3">Lokasi</div>
+	    <div class="col-4"><%= j.select(:area, S3var::AREA_LAYANAN,{},{class: "input-group-prepend custom-select", autofocus: true}) %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-3">Account Kas (Kontrol Kas)</div>
+	    <div class="col-4"><%= j.text_field :kasir_kas_name, class: 'form-control perkiraan_to_kasir_kas' , type: 'text', autofocus: true %></div>
+	    <div class="col-2">Bank (Kontrol Bank)</div>
+	    <div class="col-sm"><%= j.text_field :kasir_bank_name, class: 'form-control perkiraan_to_kasir_bank' , type: 'text', autofocus: true %></div>
+	    <%= j.hidden_field :kasir_kas, class: 'kasir_kas' %>
+	    <%= j.hidden_field :kasir_bank, class: 'kasir_bank' %>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Tahun Buka DP</div>
+	    <div class="col-4"><%= j.date_field :tahun_buka, class: 'form-control datepicker', type: "text" %></div>
+	    <div class="col-2">Jam Operasional</div>
+	    <div class="col-1"><%= j.text_field :jam_buka, class: 'form-control' , type: 'text', placeholder: 'Ex.08.00', autofocus: true %></div>
+	    <div class="col-1">s/d</div>
+	    <div class="col-1"><%= j.text_field :jam_tutup, class: 'form-control' , type: 'text', placeholder: 'Ex.20.00', autofocus: true %></div>	    
+	  </div>
+	  <div class="row">
+	  	<div class="col-3">Alamat</div>
+	    <div class="col-4"><%= j.text_area :alamat, :rows => 6, class: "form-control" %></div>
+	  	<div class="col-2">Rute Sprinter</div>
+	    <div class="col-sm"><%= j.text_area :rute_sprinter, :rows => 6, class: "form-control" %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Email</div>
+	    <div class="col-4"><%= j.text_field :email, class: 'form-control' , type: 'text', autofocus: true %></div>
+	    <div class="col-2">PIC Area</div>
+	    <div class="col-sm"><%= j.text_field :pic, class: 'form-control' , type: 'text', placeholder: 'Ex.Rudi', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-3">Nomor Telp</div>
+	    <div class="col-4"><%= j.text_field :telp, class: 'form-control' , type: 'text', autofocus: true %></div>
+	    <div class="col-2">Nomor HP</div>
+	    <div class="col-sm"><%= j.text_field :mobile_phone, class: 'form-control' , type: 'text', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Jarak Dari Gateway [KM]</div>
+	    <div class="col-4"><%= j.text_field :jarak_gateway, class: 'form-control' , type: 'number', autofocus: true %></div>
+	    <div class="col-2">Transit Mobil [X]</div>
+	    <div class="col-sm"><%= j.text_field :jumlah_transit, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", droppoints_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>

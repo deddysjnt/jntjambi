@@ -1,0 +1,2 @@
+module GudangsHelper
+end

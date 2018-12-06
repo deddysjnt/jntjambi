@@ -1,0 +1,2 @@
+json.extract! gtw_smu, :id, :kegiatan, :tanggal, :smu_id, :noref, :biaya_smu, :kasir_smu, :biaya_koor, :kasir_koor, :kg_smu, :kg_fisik, :kg_selisih, :bagging_smu, :bagging_fisik, :bagging_selisih, :maskapai, :kendaraan_id, :transporter_team, :description, :agent_id, :tanggal_smu, :terms, :tanggal_estimasi, :description, :tanggal_approve, :user_approve, :user_add, :user_edit, :ip_address, :flag, :created_at, :updated_at
+json.url gtw_smu_url(gtw_smu, format: :json)

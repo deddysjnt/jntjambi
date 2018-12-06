@@ -1,0 +1,137 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider"><span class="card-subtitle">Data Kendaraan</span></div>
+<div class="card-body">
+	<%= form_for @kendaraan do |j| %>
+
+	  <% if @kendaraan.errors.any? %>
+	  	<% @kendaraan.errors.full_messages.each do |pesan| %>
+	  		<div class = "row alert alert-danger"><%= pesan %></div>
+	  	<% end %>
+	  <% end %>
+	  
+	  <div class="row">
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Nomor_polisi %>
+		  	<%= j.text_field :nopol, class: 'form-control' , type: 'text', autofocus: true, required: "" %>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Kode_aset %>
+		  	<%= j.text_field :kode_aset, class: 'form-control' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Area_layanan %>
+		  	<%= j.select(:lokasi_layanan, S3var::AREA_LAYANAN,{},{class: "input-group-prepend custom-select", autofocus: true}) %>
+		  </div>
+		</div>	  		
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Parkir_Area %>
+		  	<%= j.text_field :parkir, class: 'form-control' , type: 'text', autofocus: true %>
+		  </div>
+		</div>	  		
+	  </div>
+
+	  <div class="row">
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Pemilik_Kendaraan %>
+		  	<%= j.select(:pemilik, S3var::PEMILIK_KENDARAAN,{},{class: "input-group-prepend custom-select", autofocus: true}) %>
+		  </div>	  		
+	  	</div>	  	
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Sopir_Tetap %>
+		  	<%= j.text_field :sopir_tetap, class: 'form-control karyawan' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  </div>
+
+	<div class="dropdown-divider"></div>
+	  <div class="row">
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Spec_Kendaraan %>
+		  	<%= j.text_area :spec_mobil, row: 3, class: 'form-control' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Rute %>
+		  	<%= j.text_area :rute, row: 3, class: 'form-control' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Tahun_Edisi %>
+		  	<%= j.text_field :tahun, class: 'form-control' , type: 'number', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Jumlah_Ban_Perset %>
+		  	<%= j.text_field :ban_set, class: 'form-control' , type: 'number', autofocus: true %>
+		  </div>	  		
+	  	</div>	  
+	  </div>
+	  
+	  <div class="dropdown-divider"></div>
+	  
+	  <div class="row">
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Tanggal_Register %>
+		  	<%= j.text_field :tanggal_register, class: 'form-control datepicker' , type: 'text', :"data-min-view"=>"2", :"data-date-format"=>"yyyy-mm-dd", autofocus: true%>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Tanggal_KIR %>
+		  	<%= j.text_field :tanggal_kir, class: 'form-control datepicker' , type: 'text', :"data-min-view"=>"2", :"data-date-format"=>"yyyy-mm-dd", autofocus: true%>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Tanggal_Pajak %>
+		  	<%= j.text_field :tanggal_pajak, class: 'form-control datepicker' , type: 'text', :"data-min-view"=>"2", :"data-date-format"=>"yyyy-mm-dd", autofocus: true%>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Tanggal_STNK %>
+		  	<%= j.text_field :tanggal_stnk, class: 'form-control datepicker' , type: 'text', :"data-min-view"=>"2", :"data-date-format"=>"yyyy-mm-dd", autofocus: true%>
+		  </div>	  		
+	  	</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Km_Awal %>
+		  	<%= j.text_field :km_awal, class: 'form-control' , type: 'number', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Km_service_berikutnya %>
+		  	<%= j.text_field :km_next_service, class: 'form-control' , type: 'number', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  </div>	
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", kendaraans_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+</div>
+</div>
+</div>
+</div>

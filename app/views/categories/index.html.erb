@@ -1,0 +1,37 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider row">
+		<div class="col-9 card-subtitle">Kelompok Barang</div>
+		<div class="col-sm card-subtitle"><%= link_to "New Kelompok Barang", new_category_path, class: $s3sukses %></div>
+	</div>
+<div class="card-body">
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Nama</th>
+			<th>Keterangan</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @categories.each do |j| %>
+		<tr>
+			<td><%= j.category_name %></td>
+			<td><%= j.ingroup %></td>
+			<td><%= link_to "Edit", edit_category_path(j.id) %></td>
+			<td><%= link_to "Delete", category_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.category_name}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @categories %>
+	<%= link_to "Back", root_path %>
+</div>
+</div>
+</div>
+</div>
+</div>

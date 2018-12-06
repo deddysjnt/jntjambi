@@ -1,0 +1,8 @@
+<div class="pulsa">
+  <% fields_for_pulsa(pulsa) do |pulsa_form| %>
+  <p>
+    Task: <%= pulsa_form.text_field :name %>
+    <%= link_to "remove", "$(this).up('.pulsa').remove()" %>
+  </p>
+  <% end %>
+</div>

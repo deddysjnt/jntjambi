@@ -1,0 +1,2 @@
+class SprinterGagal < ApplicationRecord
+end

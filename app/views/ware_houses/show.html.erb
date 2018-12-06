@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @ware_house.product %>
+</p>
+
+<p>
+  <strong>Gudang:</strong>
+  <%= @ware_house.gudang %>
+</p>
+
+<p>
+  <strong>Qty in:</strong>
+  <%= @ware_house.qty_in %>
+</p>
+
+<p>
+  <strong>Qty out:</strong>
+  <%= @ware_house.qty_out %>
+</p>
+
+<p>
+  <strong>Open disc:</strong>
+  <%= @ware_house.open_disc %>
+</p>
+
+<p>
+  <strong>Harga jual grosir:</strong>
+  <%= @ware_house.harga_jual_grosir %>
+</p>
+
+<p>
+  <strong>Harga jual retail:</strong>
+  <%= @ware_house.harga_jual_retail %>
+</p>
+
+<%= link_to 'Edit', edit_ware_house_path(@ware_house) %> |
+<%= link_to 'Back', ware_houses_path %>

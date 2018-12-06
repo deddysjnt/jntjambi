@@ -1,0 +1,47 @@
+<div class= "row">
+	<div class="col-9"><h1>DATA AGENT NASIONAL</h1></div>
+	<div class="col-sm"><%= link_to "New Agent", new_agent_path, class: $s3sukses %></div>
+</div>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Kode</th>
+			<th>Nama</th>
+			<th>Alamat</th>
+			<th>Telp</th>
+			<th>HP</th>
+			<th>Kontak</th>
+			<th>email</th>
+			<th>Via</th>
+			<th>SMU</th>
+			<th>Transit[X]</th>
+			<th>Estimasi</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @agents.each do |j| %>
+		<tr>
+			<td><%= j.kode_agent %></td>
+			<td><%= j.nama_agent %></td>
+			<td><%= j.alamat %></td>
+			<td><%= j.telp %></td>
+			<td><%= j.mobile_phone %></td>
+			<td><%= j.kontak %></td>
+			<td><%= j.email %></td>
+			<td><%= j.kirim_via %></td>
+			<td><%= j.jenis_transit %></td>
+			<td><%= j.jumlah_transit %></td>
+			<td><%= j.estimasi_tiba %></td>
+			<td><%= link_to "Edit", edit_agent_path(j.id) %></td>
+			<td><%= link_to "Delete", agent_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.nama_agent}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @agents %>
+	<%= link_to 'Back', root_path %>
+</div>

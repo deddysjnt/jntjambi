@@ -1,0 +1,32 @@
+    <div class="be-wrapper be-login">
+          <div class="splash-container">
+            <div class="card card-border-color card-border-color-success">
+              <div class="card-header"><%= image_tag "logo-xx",:size => "350x120" %>
+                <span>&copy 2018 S3Go</span></div>
+              <div class="card-body">
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <div class="login-form">
+                    <div class="form-group row login-tools">
+                      <%= f.text_field :login, autofocus: true, autocomplete: "off", placeholder: "Username", class: "form-control" %>
+                    </div>
+                    <div class="form-group row login-tools">
+                      <%= f.password_field :password, autofocus: true, placeholder: "Password", class: "form-control" %>
+                    </div>
+                    <div class="form-group row login-submit">
+                      <div class="col-6">
+                        <label class="custom-control custom-checkbox">
+                          <%= f.check_box :remember_me ,class: "custom-control-input", type: "checkbox"%>
+                          <span class="custom-control-label">Remember Me</span>
+                        </label>
+                      </div>                    
+                      <div class="col-6">
+                        <%= f.submit "Log in", class: $s3red %>
+                      </div>                    
+                    </div>
+                  </div>
+                <% end %>
+                <%= render "users/shared/links" %>
+              </div>
+            </div>
+          </div>
+    </div>

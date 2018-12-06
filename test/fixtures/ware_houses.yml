@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: 
+  gudang: 
+  qty_in: 1.5
+  qty_out: 1.5
+  open_disc: 9.99
+  harga_jual_grosir: 1
+  harga_jual_retail: 1
+
+two:
+  product: 
+  gudang: 
+  qty_in: 1.5
+  qty_out: 1.5
+  open_disc: 9.99
+  harga_jual_grosir: 1
+  harga_jual_retail: 1

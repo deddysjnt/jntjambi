@@ -1,0 +1,42 @@
+
+<%= simple_form_for @unpack, wrapper: :horizontal_form do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :sumber, as: :radio_buttons, collection: S3var::INEX, wrapper: :horizontal_collection_inline %>
+            <%= f.input :manifest_id %>
+            <%= f.input :nomor_smu %>
+            <%= f.input :droppoint_asal %>
+            <%= f.input :agent_asal %>
+            <%= f.input :nomor_bagging %>
+            <%= f.input :kg_fisik %>
+            <%= f.input :awb_fisik %>          
+            <%= f.input :fresh_paket %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :droppoint_id %>
+            <%= f.input :tanggal %>
+            <%= f.input :kg_e3 %>
+            <%= f.input :awb_e3 %>
+            <%= f.input :team_shift, as: :radio_buttons, collection: S3var::SHIFT, wrapper: :horizontal_collection_inline %>
+            <%= f.input :team_kerja %>
+            <%= f.input :description %>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,55 @@
+	<%= form_for @agent do |j| %>
+
+	  <% if @agent.errors[:nama_dp].any? %>
+	  	<div class = "row alert alert-danger"><%= "Nama Agent : #{@agent.errors[:nama_dp].first}" %></div>
+	  <% end %>
+	  <div class="row">
+	    <div class="col-3">Nama Agent</div>
+	    <div class="col-sm"><%= j.text_field :nama_agent, class: 'form-control' , type: 'text', placeholder: 'Ex.Jambi', autofocus: true, :"required"=>"", :"data-parsley-minlength"=>"6" %></div>
+	  </div>
+ 	  <div class="row">
+	    <div class="col-3">Kode Agent</div>
+	    <div class="col-4"><%= j.text_field :kode_agent, class: 'form-control' , type: 'text', placeholder: 'Ex.A0007', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Kontak</div>
+	    <div class="col-4"><%= j.text_field :kontak, class: 'form-control' , type: 'text', placeholder: 'Ex.Tomy Tan', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	  		<div class="col-3">Alamat</div>
+	    	<div class="col-sm"><%= j.text_area :alamat, :rows => 3, class: "form-control" %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Email</div>
+	    <div class="col-sm"><%= j.text_field :email, class: 'form-control' , type: 'text', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-3">Nomor Telp</div>
+	    <div class="col-sm"><%= j.text_field :telp, class: 'form-control' , type: 'text', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-3">Nomor HP</div>
+	    <div class="col-sm"><%= j.text_field :mobile_phone, class: 'form-control' , type: 'text', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Kirim Via</div>
+	    <div class="col-2"><%= j.text_field :kirim_via, class: 'form-control' , type: 'text', autofocus: true %></div>
+	    <div class="col-2">Jenis Transit</div>
+	    <div class="col-2"><%= j.text_field :jenis_transit, class: 'form-control' , type: 'text', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Jumlah Transit</div>
+	    <div class="col-2"><%= j.text_field :jumlah_transit, class: 'form-control' , type: 'number', autofocus: true %></div>
+	    <div class="col-2">Estimasi Tiba</div>
+	    <div class="col-2"><%= j.text_field :estimasi_tiba, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", agents_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>

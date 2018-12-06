@@ -1,0 +1,2 @@
+class Dpoutgoing < ApplicationRecord
+end

@@ -1,0 +1,5 @@
+<% form_for :orderpulsa, :url => orderpulsa_path(@orderpulsa), :html => { :method => 'put' } do |f| %>
+  <%= render :partial => 'fields', :locals => { :f => f } %>
+  <p><%= submit_tag "Simpan Perubahan" %></p>
+<% end %>
+

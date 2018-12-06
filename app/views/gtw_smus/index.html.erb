@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gtw Smus</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Kegiatan</th>
+      <th>Tanggal</th>
+      <th>Smu</th>
+      <th>Noref</th>
+      <th>Biaya smu</th>
+      <th>Kasir smu</th>
+      <th>Biaya koor</th>
+      <th>Kasir koor</th>
+      <th>Kg smu</th>
+      <th>Kg fisik</th>
+      <th>Kg selisih</th>
+      <th>Bagging smu</th>
+      <th>Bagging fisik</th>
+      <th>Bagging selisih</th>
+      <th>Maskapai</th>
+      <th>Kendaraan</th>
+      <th>Transporter team</th>
+      <th>Description</th>
+      <th>Agent</th>
+      <th>Tanggal smu</th>
+      <th>Terms</th>
+      <th>Tanggal estimasi</th>
+      <th>Description</th>
+      <th>Tanggal approve</th>
+      <th>User approve</th>
+      <th>User add</th>
+      <th>User edit</th>
+      <th>Ip address</th>
+      <th>Flag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gtw_smus.each do |gtw_smu| %>
+      <tr>
+        <td><%= gtw_smu.kegiatan %></td>
+        <td><%= gtw_smu.tanggal %></td>
+        <td><%= gtw_smu.smu_id %></td>
+        <td><%= gtw_smu.noref %></td>
+        <td><%= gtw_smu.biaya_smu %></td>
+        <td><%= gtw_smu.kasir_smu %></td>
+        <td><%= gtw_smu.biaya_koor %></td>
+        <td><%= gtw_smu.kasir_koor %></td>
+        <td><%= gtw_smu.kg_smu %></td>
+        <td><%= gtw_smu.kg_fisik %></td>
+        <td><%= gtw_smu.kg_selisih %></td>
+        <td><%= gtw_smu.bagging_smu %></td>
+        <td><%= gtw_smu.bagging_fisik %></td>
+        <td><%= gtw_smu.bagging_selisih %></td>
+        <td><%= gtw_smu.maskapai %></td>
+        <td><%= gtw_smu.kendaraan_id %></td>
+        <td><%= gtw_smu.transporter_team %></td>
+        <td><%= gtw_smu.description %></td>
+        <td><%= gtw_smu.agent_id %></td>
+        <td><%= gtw_smu.tanggal_smu %></td>
+        <td><%= gtw_smu.terms %></td>
+        <td><%= gtw_smu.tanggal_estimasi %></td>
+        <td><%= gtw_smu.description %></td>
+        <td><%= gtw_smu.tanggal_approve %></td>
+        <td><%= gtw_smu.user_approve %></td>
+        <td><%= gtw_smu.user_add %></td>
+        <td><%= gtw_smu.user_edit %></td>
+        <td><%= gtw_smu.ip_address %></td>
+        <td><%= gtw_smu.flag %></td>
+        <td><%= link_to 'Show', gtw_smu %></td>
+        <td><%= link_to 'Edit', edit_gtw_smu_path(gtw_smu) %></td>
+        <td><%= link_to 'Destroy', gtw_smu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Gtw Smu', new_gtw_smu_path %>

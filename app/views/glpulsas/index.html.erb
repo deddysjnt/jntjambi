@@ -1,0 +1,53 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider row">
+		<div class="col-9 card-subtitle">Pemakaian/Pesanan Pulsa</div>
+		<div class="col-sm card-subtitle"><%= link_to "New ISI PULSA", new_glpulsa_path, class: $s3sukses %></div>
+	</div>
+<div class="card-body">
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-success">
+		<tr>
+			<th>Tanggal Pesan</th>
+			<th>Karyawan</th>
+			<th>DP</th>
+			<th>Pulsa</th>
+			<th>Nomor</th>
+			<th class="text-right">Nominal</th>
+			<th>Tanggal Isi</th>
+			<th class="text-right">Biaya</th>
+			<th>Kasir</th>
+			<th>Flag</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @glpulsas.each do |j| %>
+		<tr>
+			<td><%= j.tanggal.try(:strftime, "%d/%m/%Y") %></td>
+			<td><%= j.nama_karyawan %></td>
+			<td><%= j.nama_dp %></td>
+			<td><%= j.jenis_pulsa %></td>
+			<td><%= j.mobile_phone %></td>
+			<td class="text-right"><%= number_with_delimiter j.nominal %></td>
+			<td><%= j.tanggal_isi.try(:strftime, "%d/%m/%Y") %></td>
+			<td class="text-right"><%= number_with_delimiter j.biaya_pulsa %></td>
+			<td><%= j.nama_perkiraan %></td>
+			<td><%= j.flag %></td>
+			<td><%= link_to "Edit", edit_glpulsa_path(j.id) %></td>
+			<td><%= link_to "Delete", glpulsa_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.mobile_phone}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @glpulsas %>
+	<%= link_to 'Back', root_path %>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Packs</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Droppoint</th>
+      <th>Tanggal</th>
+      <th>Manifest</th>
+      <th>Tujuan</th>
+      <th>Agent tujuan</th>
+      <th>Droppoint tujuan</th>
+      <th>Nomor bagging</th>
+      <th>Kg fisik</th>
+      <th>Awb fisik</th>
+      <th>Team shift</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @packs.each do |pack| %>
+      <tr>
+        <td><%= pack.droppoint_id %></td>
+        <td><%= pack.tanggal %></td>
+        <td><%= pack.manifest_id %></td>
+        <td><%= pack.tujuan %></td>
+        <td><%= pack.agent_tujuan %></td>
+        <td><%= pack.droppoint_tujuan %></td>
+        <td><%= pack.nomor_bagging %></td>
+        <td><%= pack.kg_fisik %></td>
+        <td><%= pack.awb_fisik %></td>
+        <td><%= pack.team_shift %></td>
+        <td><%= link_to 'Show', pack %></td>
+        <td><%= link_to 'Edit', edit_pack_path(pack) %></td>
+        <td><%= link_to 'Destroy', pack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Pack', new_pack_path %>

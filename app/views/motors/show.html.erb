@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Karyawan:</strong>
+  <%= @motor.karyawan_id %>
+</p>
+
+<p>
+  <strong>Nopol:</strong>
+  <%= @motor.nopol %>
+</p>
+
+<p>
+  <strong>Spect:</strong>
+  <%= @motor.spect %>
+</p>
+
+<p>
+  <strong>Tanggal register:</strong>
+  <%= @motor.tanggal_register %>
+</p>
+
+<p>
+  <strong>Km reg:</strong>
+  <%= @motor.km_reg %>
+</p>
+<%= link_to 'Edit', edit_motor_path(@motor) %> |
+<%= link_to 'Back', motors_path %>

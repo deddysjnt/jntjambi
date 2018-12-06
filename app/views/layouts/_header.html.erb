@@ -1,0 +1,142 @@
+<div class = "container-fluid">
+  <nav class="navbar fixed-top navbar-expand-lg border-top border-bottom bg-dark">
+  <a class="navbar-brand" href="#">FOR MY SUN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">    
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">P O P</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Kelompok Barang", categories_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Master Barang", products_path, class: $s3sukses %></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Barang Masuk</a>
+            <a class="dropdown-item" href="">Kirim Ke Droppoint</a>
+            <a class="dropdown-item"><%= link_to "Pemakaian Harian", pkhds_path, class: $s3sukses %></a>
+            <a class="dropdown-item" href="">Void Monitoring</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Persediaan Akhir</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Permintaan Barang</a>
+            <a class="dropdown-item" href="">Scadule Order Supplier</a>          
+          </div>
+        </li>
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Gateway</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Pack-Bagging Seal", packs_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "UnPack-Bagging Seal", unpacks_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Buat Manifest","", class: $s3sukses %></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item"><%= link_to "Sortir Paket", gtw_sortirs_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Serah Terima Paket", gtw_stmps_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Register SMU", gtw_smus_path, class: $s3sukses %></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Forum</a>          
+          </div>
+        </li>
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Sprinter Form</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Sprinter Monitoring Bawa Paket", sprinter_bawas_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Sprinter Monitoring Setoran", sprinter_kembalis_path, class: $s3sukses %></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item"><%= link_to "Gagal Delivery", sprinter_gagals_path, class: $s3sukses %></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item"><%= link_to "Register Motor Sprinter", motors_path, class: $s3sukses %></a>
+          </div>
+        </li>
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Admin Form</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Pendapatan Harian", dpoutgoings_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Buat Manifest","", class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Pack Bagging Paket", packs_path, class: $s3sukses %></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Setoran Ke-Manager</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Resolusi</a>          
+          </div>
+        </li>
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Driver Form</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Isi BBM", glbbms_path, class: $s3sukses %></a>
+            <a class="dropdown-item" href="">Service</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Dartar Masalah Kendaraan</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item"><%= link_to "Master Kendaraan", kendaraans_path, class: $s3sukses %></a>
+          </div>
+        </li>
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Finance</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Jurnal Harian", glhds_path, class: $s3sukses %></a> 
+            <a class="dropdown-item"><%= link_to "Pulsa Monitoring", glpulsas_path, class: $s3sukses %></a>
+            <a class="dropdown-item" href="">Penerimaan Kas</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Dartar Masalah</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Resolusi</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item"><%= link_to "Account Jurnal", perkiraans_path, class: $s3sukses %></a> 
+          </div>
+        </li>
+
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Report Operasional</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item" href="">Paket Bermasalah</a>
+            <a class="dropdown-item" href="">Incoming Harian</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Biaya Harian</a>
+            <a class="dropdown-item" href="">Biaya Rekapitulasi</a>          
+          </div>
+        </li>
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Report Office</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item" href="">Outgoing Harian</a>
+            <a class="dropdown-item" href="">Incoming Harian</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Biaya Harian</a>
+            <a class="dropdown-item" href="">Biaya Rekapitulasi</a>          
+          </div>
+        </li>
+
+      <li class="nav-item btn-group"><button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Human Resource</button>
+          <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Jabatan Pusat", jabatanpusats_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Jabatan Jambi", jabatans_path, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to "Karyawan Jambi", karyawans_path, class: $s3sukses %></a>
+            <a class="dropdown-item" href="">Mutasi Jabatan</a>
+            <a class="dropdown-item" href="">Karyawan Berhenti</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Surat SP-1</a>
+            <a class="dropdown-item" href="">Surat SP-2</a>
+            <a class="dropdown-item" href="">Surat SP-3</a>
+            <a class="dropdown-item" href="">Daftar Permasalahan</a>
+            <div class="dropdown-divider"></div> 
+            <a href=""><i class="dropdown-item"></i><span>Request Karyawan</span></a>       
+          </div>
+        </li>
+
+      <li class="nav-item btn-group">
+        <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Setting</button>
+
+        <div class="dropdown-menu" role="menu">
+            <a class="dropdown-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, class: $s3sukses %></a>
+            <a class="dropdown-item"><%= link_to 'Edit Profile', edit_user_registration_path, class: $s3sukses %></a>
+          <a class="dropdown-item"><%= link_to "Agent", agents_path, class: $s3sukses %></a>
+          <a class="dropdown-item"><%= link_to "Droppoint", droppoints_path, class: $s3sukses %></a>
+          <a class="dropdown-item"><%= link_to "Monitor Nomor Urut", entry_posts_path, class: $s3sukses %></a>
+        </div>
+      </li>
+
+    </ul>
+    </div>
+  </nav>
+</div>

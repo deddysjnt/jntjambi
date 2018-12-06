@@ -1,0 +1,2 @@
+class Unpack < ApplicationRecord
+end

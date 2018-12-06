@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dpbaggings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kegiatan</th>
+      <th>Tanggal</th>
+      <th>Bagging</th>
+      <th>Noref</th>
+      <th>Droppoint asal</th>
+      <th>Kg asal</th>
+      <th>Awb asal</th>
+      <th>Tanggal kirim</th>
+      <th>Manifest</th>
+      <th>Tanggal terima</th>
+      <th>Droppoint terima</th>
+      <th>Kg terima</th>
+      <th>Awb terima</th>
+      <th>Selisih kg</th>
+      <th>Selisih awb</th>
+      <th>Fresh paket</th>
+      <th>Description</th>
+      <th>Tanggal approve</th>
+      <th>User approve</th>
+      <th>User add</th>
+      <th>User edit</th>
+      <th>Ip address</th>
+      <th>Flag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dpbaggings.each do |dpbagging| %>
+      <tr>
+        <td><%= dpbagging.kegiatan %></td>
+        <td><%= dpbagging.tanggal %></td>
+        <td><%= dpbagging.bagging_id %></td>
+        <td><%= dpbagging.noref %></td>
+        <td><%= dpbagging.droppoint_asal %></td>
+        <td><%= dpbagging.kg_asal %></td>
+        <td><%= dpbagging.awb_asal %></td>
+        <td><%= dpbagging.tanggal_kirim %></td>
+        <td><%= dpbagging.manifest_id %></td>
+        <td><%= dpbagging.tanggal_terima %></td>
+        <td><%= dpbagging.droppoint_terima %></td>
+        <td><%= dpbagging.kg_terima %></td>
+        <td><%= dpbagging.awb_terima %></td>
+        <td><%= dpbagging.selisih_kg %></td>
+        <td><%= dpbagging.selisih_awb %></td>
+        <td><%= dpbagging.fresh_paket %></td>
+        <td><%= dpbagging.description %></td>
+        <td><%= dpbagging.tanggal_approve %></td>
+        <td><%= dpbagging.user_approve %></td>
+        <td><%= dpbagging.user_add %></td>
+        <td><%= dpbagging.user_edit %></td>
+        <td><%= dpbagging.ip_address %></td>
+        <td><%= dpbagging.flag %></td>
+        <td><%= link_to 'Show', dpbagging %></td>
+        <td><%= link_to 'Edit', edit_dpbagging_path(dpbagging) %></td>
+        <td><%= link_to 'Destroy', dpbagging, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dpbagging', new_dpbagging_path %>

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Motors</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Karyawan</th>
+      <th>Nopol</th>
+      <th>Spect</th>
+      <th>Tanggal register</th>
+      <th>Km reg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @motors.each do |motor| %>
+      <tr>
+        <td><%= motor.karyawan_id %></td>
+        <td><%= motor.nopol %></td>
+        <td><%= motor.spect %></td>
+        <td><%= motor.tanggal_register %></td>
+        <td><%= motor.km_reg %></td>
+        <td><%= link_to 'Show', motor %></td>
+        <td><%= link_to 'Edit', edit_motor_path(motor) %></td>
+        <td><%= link_to 'Destroy', motor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Motor', new_motor_path %>

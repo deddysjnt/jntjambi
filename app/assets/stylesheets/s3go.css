@@ -1,0 +1,176 @@
+/*------------------------------------------------------------------
+  [Splash screen]
+*/
+.be-splash-screen {
+  background-color: #eee;
+}
+
+.be-splash-screen .be-wrapper {
+  padding-top: 0;
+}
+
+.be-splash-screen .be-wrapper .be-content {
+  margin: 0;
+}
+
+.splash-container {
+  max-width: 401px;
+  margin: 50px auto;
+}
+
+.splash-container .card {
+  margin-bottom: 30px;
+}
+
+.splash-container .card .card-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.splash-container .card .card-body {
+  padding: 20px 30px 15px;
+}
+
+.splash-container .card .card-body .custom-checkbox {
+  display: inline-block;
+  margin: 0;
+}
+
+@media (max-width: 767.98px) {
+  .splash-container {
+    margin-top: 50px;
+  }
+}
+
+.splash-title {
+  text-align: center;
+  display: block;
+  font-size: 1.308rem;
+  font-weight: 300;
+}
+
+.splash-description {
+  text-align: center;
+  display: block;
+  line-height: 20px;
+  font-size: 1rem;
+  color: #5a5a5a;
+  margin-top: 11px;
+  padding-bottom: 10px;
+}
+
+.splash-footer {
+  text-align: center;
+}
+
+/*------------------------------------------------------------------
+  [Login]
+*/
+.row.login-tools {
+  padding: 15px 0 0;
+  margin-bottom: 16px;
+}
+
+.login-forgot-password {
+  line-height: 2.1;
+  text-align: right;
+}
+
+.login-submit, .row.login-submit {
+  padding: 19px 0 0;
+  margin-bottom: 1.3842rem;
+}
+
+.login-submit .btn, .row.login-submit .btn {
+  width: 100%;
+}
+
+.login-submit > div:first-child, .row.login-submit > div:first-child {
+  padding-right: 10px;
+}
+
+.login-submit > div:last-child, .row.login-submit > div:last-child {
+  padding-left: 10px;
+}
+
+/*------------------------------------------------------------------*/
+.autosearch input {
+  width: 100%;
+  font-size: 1em;
+  padding: .5em 1.3em;
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 2em;
+}
+
+.autosearch input:focus {
+  border-color: #A5CEF5;
+}
+.ui-autocomplete {
+  background: #fff;
+  font-size: .9em;
+  padding: 1em 0;
+  border: 1px solid #ddd;
+  border-radius: 1em;
+  box-shadow: .5em .5em rgba(187, 187, 187, 0.64);
+  line-height: 20px;
+  max-height: 20em;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.auto .ui-menu-item {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  padding: .4em .6em .4em 6.2em;
+  position: relative;
+  border: 0;
+  border-left: 5px solid transparent;
+  position: relative;
+  height: 6.5em;
+}
+.ui-state-focus {
+  background: #fff;
+  border-left-color: #08c;
+  font-weight: 300;
+}
+.ui-menu-item .img {
+  position: absolute;
+  width: 5em;
+  height: 6em;
+  top: .4em;
+  left: .6em;
+  overflow: hidden;
+}
+
+.auto .ui-menu-item .img img {
+  max-width: 100%;
+}
+
+.ui-menu-item {
+  display: block;
+  color: #555;
+}
+
+.autosearch .results .ui-menu-item .author {
+  display: block;
+  font-size: .8em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: .6em;
+  letter-spacing: 1px;
+}
+
+.autosearch .results .ui-menu-item .price {
+  display: block;
+  font-size: .8em;
+  color: #aaa;
+  margin-top: .5em;
+}
+
+.autosearch .results .ui-state-focus .price,
+.autosearch .results .ui-state-focus .author,
+.autosearch .results .ui-state-focus .title {
+  color: #08c;
+}

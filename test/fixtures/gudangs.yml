@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  droppoint: 
+  nama_gudang: MyString
+  area_layanan: MyString
+  kota: MyString
+  kecamatan: MyString
+  alamat: MyText
+  no_telp: MyText
+  mobile_phone: MyText
+  contact: 
+  email: MyString
+
+two:
+  droppoint: 
+  nama_gudang: MyString
+  area_layanan: MyString
+  kota: MyString
+  kecamatan: MyString
+  alamat: MyText
+  no_telp: MyText
+  mobile_phone: MyText
+  contact: 
+  email: MyString

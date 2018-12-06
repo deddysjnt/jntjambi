@@ -1,0 +1,53 @@
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+  <div class="card-header card-header-divider"><span class="card-subtitle">Edit User Role</span></div>
+<div class="card-body">
+  <%= simple_form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <% @user.errors.full_messages.each do |pesan| %> 
+        <div class = "row alert alert-danger"><%= pesan %></div>
+      <% end %>
+    <% end %>
+    <div class="form-inputs">
+      <div class="row">
+        <div class="col-sm"><%= f.input :nama_karyawan, input_html:{class: "nama_karyawan_to_user"} %></div>
+        <div class="col-sm"><%= f.input :username, input_html:{disabled: true} %></div>
+        <div class="col-sm"><%= f.input :email, input_html:{disabled: true} %></div>
+      </div>
+      <div class="row">
+        <%= f.input :karyawan_id, as: :hidden %>
+        <%= f.input :droppoint_id, as: :hidden %>
+        <div class="col-sm"><%= f.input :mobile_phone %></div>
+        <div class="col-sm"><%= f.input :nama_dp, input_html:{disabled: true} %></div>
+        <div class="col-sm"><%= f.input :cabang, input_html:{disabled: true} %></div>
+      </div>
+      <div class="row">
+        <div class="col-sm"><%= f.input :level, as: :radio_buttons, collection: S3var::LEVEL, wrapper: :vertical_collection_inline %></div>
+        <div class="col-sm"><%= f.input :role_id, as: :radio_buttons, collection: S3var::ROLE, wrapper: :vertical_collection_inline %></div>
+      </div>
+      <div class="row">
+        <div class="col-sm"><%= f.input :divisi, as: :radio_buttons, collection: S3var::DIVISI_KERJA, wrapper: :vertical_collection_inline %></div>
+      </div>
+      <div class="row">
+        <div class="col-sm"><%= f.input :tambahdata %></div>
+        <div class="col-sm"><%= f.input :hapusdata %></div>
+        <div class="col-sm"><%= f.input :ubahdata %></div>
+        <div class="col-sm"><%= f.input :lihatdata %></div>
+        <div class="col-sm"><%= f.input :akunstatus %></div>
+        <div class="col-sm"><%= f.input :approved %></div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+  <%= link_to "Back", root_path %>
+</div>
+</div>
+</div>
+</div>
+</div>
+

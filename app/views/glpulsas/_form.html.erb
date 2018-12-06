@@ -1,0 +1,89 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider"><span class="card-subtitle">ISI PULSA (Entry/Edit)</span></div>
+<div class="card-body">
+	<%= form_for @glpulsa do |j| %>
+
+	  <% if @glpulsa.errors.any? %>
+	  	<% @glpulsa.errors.full_messages.each do |pesan| %>
+	  		<div class = "row alert alert-danger"><%= pesan %></div>
+	  	<% end %>
+	  <% end %>
+	  <div class="row">
+	  	<div class="col-6">
+		  <div class="field">
+		  	<%= j.label :Karyawan_Order %>
+		  	<%= j.text_field :nama_karyawan, class: 'form-control karyawan' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  </div>	  
+	  <div class="row">
+	  	<div class="col-6">
+	  	  <div class="field">
+		  	<%= j.label :Tanggal %>
+		  	<%= j.text_field :tanggal, class: 'form-control datepicker' , type: 'text', autofocus: true%>
+		  </div>	  			  		
+	  	</div>
+	  </div>
+
+	  <div class="row">
+	  	<div class="col-6">
+		  <div class="field">
+		  	<%= j.label :Nomor_HP %>
+		  	<%= j.text_field :mobile_phone, class: 'form-control' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  </div>
+
+	  <div class="row">
+	  	<div class="col-6">
+		  <div class="field">
+		  	<%= j.label :Droppoint %>
+		  	<%= j.text_field :nama_dp, class: 'form-control droppoint' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>	  	
+	  </div>
+
+	<div class="dropdown-divider"></div>
+	  <div class="row">
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Jenis_PULSA %>
+		  	<%= j.select(:jenis_pulsa, S3var::JENIS_PULSA,{},{class: "input-group-prepend custom-select", autofocus: true}) %>
+		  </div>	  		
+	  	</div>	  		  	
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Nominal %>
+		  	<%= j.select(:nominal, S3var::NOMINAL_PULSA,{},{class: "input-group-prepend custom-select", autofocus: true}) %>
+		  </div>	  		
+	  	</div>	  
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :Total_Harga%>
+		  	<%= j.text_field :biaya_pulsa, class: 'form-control' , type: 'number', autofocus: true %>
+		  </div>	  		
+	  	</div>	  
+	  	<div class="col">
+		  <div class="field">
+		  	<%= j.label :ID_Kasir %>
+		  	<%= j.text_field :perkiraan_id, class: 'form-control perkiraan' , type: 'text', autofocus: true %>
+		  </div>	  		
+	  	</div>
+	  </div>
+	  
+	  <div class="dropdown-divider"></div>
+	  
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", glpulsas_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+</div>
+</div>
+</div>
+</div>

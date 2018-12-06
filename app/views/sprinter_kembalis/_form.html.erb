@@ -1,0 +1,120 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+<div class="card-body">
+	<%= form_for @sprinter_kembali do |j| %>
+
+	  <% if @sprinter_kembali.errors.any? %>
+	  	<% @sprinter_kembali.errors.full_messages.each do |pesan| %>
+	  		<div class = "row alert alert-danger"><%= pesan %></div>
+	  	<% end %>
+	  <% end %>
+
+	    <div class="row">
+		  	<div class="col-2">Setoran Sprinter</div>
+		  	<div class="col-sm"><%= j.text_field :nama_karyawan, class: 'form-control karyawan' , type: 'text', autofocus: true, required: "" %></div>
+		  	<div class="col-2">Tanggal</div>
+		  	<div class="col-sm"><%= j.text_field :tanggal, class: 'form-control datepicker' , type: 'text', autofocus: true %></div>
+	    </div>
+
+	    <div class="row">
+		  	<div class="col-2">DP</div>
+		  	<div class="col-sm"><%= j.text_field :nama_dp, class: 'form-control droppoint' , type: 'text', autofocus: true, required: "" %></div>
+		  	<div class="col-2">Nomor Form</div>
+		  	<div class="col-sm"><%= j.text_field :nomor_form, class: 'form-control' , type: 'text', autofocus: true %></div>
+	    </div>
+	  <%#= render "awb" %>
+
+<div class="dropdown-divider"></div>
+<div class="row">
+  	<div class="col-2">Total Kembali</div>
+    <div class="col-2">Total Bawa</div>
+  	<div class="col-2">Total Sukses</div>
+    <div class="col-2">Setting Target</div>
+    <div class="col-2">Pencapaian</div>
+    <div class="col-2">Point</div>
+</div>
+<div class="row">
+  	<div class="col-2"><%= j.text_field :awb_gagal, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2"><%= j.text_field :awb_bawa, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2"><%= j.text_field :awb_sukses, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2"><%= j.text_field :target_set, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2"><%= j.text_field :pencapaian, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2"><%= j.text_field :point, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+</div>
+<div class="dropdown-divider">Pengembalian</div>
+<div class="row">
+  	<div class="col-2">COD sukses</div>
+  	<div class="col-2">DFOD sukses</div>
+  	<div class="col-2">PPCASH sukses</div>
+  	<div class="col-2">POP PPCASH kembali</div>
+  	<div class="col-2">POP DFOD kembali</div>
+  	<div class="col-2">POP COD kembali</div>
+</div>
+<div class="row">
+  	<div class="col-2"><%= j.text_field :awb_cod_sukses, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :awb_dfod_sukses, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :awb_ppcash_sukses, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :pop_awb_ppcash_kembali, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :pop_awb_dfod_kembali, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :pop_awb_cod_kembali, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+</div>
+
+
+	  <%#= render "kas" %>
+
+<div class="dropdown-divider"></div>
+<div class="row">
+  	<div class="col-2">Km Stop</div>
+  	<div class="col-2">Km Start</div>
+  	<div class="col-2">Jarak</div>
+  	<div class="col-2">Biaya BBM</div>
+  	<div class="col-2">Biaya Lain</div>
+  	<div class="col-2">Janis</div>
+</div>
+<div class="row">
+  	<div class="col-2"><%= j.text_field :km_stop, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :km_start, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :jarak_km, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :biaya_bbm, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-2"><%= j.text_field :biaya_lain, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  	<div class="col-sm"><%= j.select(:jenis_biaya_lain, S3var::JENIS_BIAYA_LAIN,{},{class: "input-group-prepend custom-select", autofocus: true}) %></div>
+</div>
+<div class="dropdown-divider"></div>
+  <div class="row">
+    <div class="col-2">Pickup Mitra(awb)</div>
+    <div class="col-2">Pickup Client(awb)</div>
+    <div class="col-2">Pickup User(awb)</div>
+    <div class="col-3">TOTAL UANG MASUK</div>
+    <div class="col-3">TOTAL UANG KELUAR</div>
+  </div>  
+  <div class="row">
+    <div class="col-2"><%= j.text_field :pickup_mitra, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2"><%= j.text_field :pickup_client, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2"><%= j.text_field :pickup_user, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-3"><%= j.text_field :uang_masuk, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-3"><%= j.text_field :uang_keluar, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  </div>
+<div class="dropdown-divider"></div>        
+  <div class="row">
+    <div class="col-2">TOTAL UANG SETORAN</div>
+    <div class="col-4"><%= j.text_field :uang_setoran, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+    <div class="col-2">KASIR</div>
+    <div class="col-4"><%= j.text_field :perkiraan_id, class: 'form-control' , type: 'number', autofocus: true, required: "" %></div>
+  </div>
+
+
+	  <%#= render "pop" %>
+	  <br>
+	  <div class="row">
+		<div class="col-2">Keterangan</div>
+		<div class="col-4"><%= j.text_area :description, row: 3, class: 'form-control' , type: 'text', autofocus: false %></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", sprinter_kembalis_path,class: $s3blue %></div>
+	  </div>
+    <%= j.text_field :jabatan_id, hidden:true %>
+	<% end %>
+</div>
+</div>
+</div>
+</div>

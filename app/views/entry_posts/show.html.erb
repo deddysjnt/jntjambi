@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transaksi:</strong>
+  <%= @entry_post.transaksi %>
+</p>
+
+<p>
+  <strong>Last num:</strong>
+  <%= @entry_post.last_num %>
+</p>
+
+<p>
+  <strong>Format key:</strong>
+  <%= @entry_post.format_key %>
+</p>
+
+<%= link_to 'Edit', edit_entry_post_path(@entry_post) %> |
+<%= link_to 'Back', entry_posts_path %>

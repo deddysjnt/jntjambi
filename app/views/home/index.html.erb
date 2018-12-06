@@ -1,0 +1,93 @@
+  <div class="content">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-header card-header-divider">
+            <span class="card-subtitle">User Login Information</span>
+          </div>
+          <div class="card-body">
+            <% if user_signed_in? %>
+                <div>Email <%= current_user.email %></div>
+                <div>Nama <%= current_user.username %></div>
+                <div>ID <%= current_user.id %></div>
+                <div>Level <%= current_user.level %></div>
+                <div>Hp. <%= current_user.mobile_phone %></div>
+                <div>Nik <%= current_user.karyawan_id %></div>
+                <div>Divisi <%= current_user.divisi %></div>
+                <div>Cabang <%= current_user.cabang %></div>
+                <div>Tambah <%= current_user.tambahdata %></div>
+                <div>Hapus <%= current_user.hapusdata %></div>
+                <div>Ubah <%= current_user.ubahdata %></div>
+                <div>View <%= current_user.lihatdata %></div>
+                <div>DP <%= current_user.droppoint %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-danger">
+          <div class="card-header card-header-divider">
+            <span class="card-subtitle">User Waiting for Approval</span>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive-sb">
+              <table class="table table-bordered table-hover">
+                <thead>
+                  <th>Email</th>
+                  <th>User</th>
+                  <th>Nama Karyawan</th>
+                  <th>Approved</th>
+                  <th>Action</th>
+                </thead>
+                <tbody>
+                  <%# @users.all_unapproved.each do |user| %>
+                  <% @users.all.each do |user| %>
+                  <tr>
+                    <td><%= user.email %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.nama_karyawan %></td>
+                    <td><%= user.approved %></td>
+                    <td><%= link_to "Edit", edit_user_path(user.id) %></td>
+                  </tr>
+                </tbody>
+              <% end %>
+              </table>
+            </div>
+
+            <form>
+              <p>Nama :</p><input type="text" id="nama_perkiraan" class="form-control perkiraan">
+              <p>ID   :</p><input type="text" id="id" name="perkiraan_id" class="form-control">
+              <p>Acno :</p><input type="text" id="acno" class="form-control">
+            </form>
+            <button class="btn btn-sm s3saja" id="tombol">TOMBOL</button>
+          </div>
+        </div>
+    </div>
+    </div>  
+  </div>
+
+
+  <script>
+  /*
+    $( "input[id^='input_perkiraan_id']" ).on('change',autoFill);
+    function autoFill(){
+      var xx = $( "input[id^='input_perkiraan_id']" ).val();
+      $.ajax({
+        dataType: "json",
+        url: "/perkiraans.json",
+        data: "autofill="+xx,
+        success: function(data){
+          var obj= data;
+          if (obj.length > 0){
+            $( "input[id^='nama_perkiraan']" ).val(obj[0].label);
+            $( "input[id^='acno']" ).val(obj[0].item);
+          }else{
+            $( "input[id^='input_perkiraan_id']" ).select();
+            $( "input[id^='input_perkiraan_id']" ).focus();
+          }
+        }
+      });      
+    };
+  */
+  </script>

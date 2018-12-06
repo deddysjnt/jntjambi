@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kegiatan: MyString
+  tanggal: 2018-11-29 01:21:02
+  smu_id: MyString
+  noref: MyString
+  biaya_smu: 1
+  kasir_smu: 1
+  biaya_koor: 1
+  kasir_koor: 1
+  kg_smu: 1
+  kg_fisik: 1
+  kg_selisih: 1
+  bagging_smu: 1
+  bagging_fisik: 1
+  bagging_selisih: 1
+  maskapai: MyString
+  kendaraan_id: 1
+  transporter_team: MyText
+  description: MyText
+  agent_id: 1
+  tanggal_smu: 2018-11-29 01:21:02
+  terms: 1
+  tanggal_estimasi: 2018-11-29 01:21:02
+  description: MyText
+  tanggal_approve: 2018-11-29 01:21:02
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1
+
+two:
+  kegiatan: MyString
+  tanggal: 2018-11-29 01:21:02
+  smu_id: MyString
+  noref: MyString
+  biaya_smu: 1
+  kasir_smu: 1
+  biaya_koor: 1
+  kasir_koor: 1
+  kg_smu: 1
+  kg_fisik: 1
+  kg_selisih: 1
+  bagging_smu: 1
+  bagging_fisik: 1
+  bagging_selisih: 1
+  maskapai: MyString
+  kendaraan_id: 1
+  transporter_team: MyText
+  description: MyText
+  agent_id: 1
+  tanggal_smu: 2018-11-29 01:21:02
+  terms: 1
+  tanggal_estimasi: 2018-11-29 01:21:02
+  description: MyText
+  tanggal_approve: 2018-11-29 01:21:02
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1

@@ -1,0 +1,41 @@
+
+<%= simple_form_for(@gtw_smu) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :kegiatan %>
+    <%= f.input :tanggal %>
+    <%= f.input :smu_id %>
+    <%= f.input :noref %>
+    <%= f.input :biaya_smu %>
+    <%= f.input :kasir_smu %>
+    <%= f.input :biaya_koor %>
+    <%= f.input :kasir_koor %>
+    <%= f.input :kg_smu %>
+    <%= f.input :kg_fisik %>
+    <%= f.input :kg_selisih %>
+    <%= f.input :bagging_smu %>
+    <%= f.input :bagging_fisik %>
+    <%= f.input :bagging_selisih %>
+    <%= f.input :maskapai %>
+    <%= f.input :kendaraan_id %>
+    <%= f.input :transporter_team %>
+    <%= f.input :description %>
+    <%= f.input :agent_id %>
+    <%= f.input :tanggal_smu %>
+    <%= f.input :terms %>
+    <%= f.input :tanggal_estimasi %>
+    <%= f.input :description %>
+    <%= f.input :tanggal_approve %>
+    <%= f.input :user_approve %>
+    <%= f.input :user_add %>
+    <%= f.input :user_edit %>
+    <%= f.input :ip_address %>
+    <%= f.input :flag %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

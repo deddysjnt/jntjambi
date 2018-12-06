@@ -1,0 +1,58 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider"><span class="card-subtitle">Account Jurnal</span></div>
+<div class="card-body">
+	<%= form_for @perkiraan do |j| %>
+
+	  <% if @perkiraan.errors[:acno].any? %>
+	  	<div class = "row alert alert-danger"><%= "Kode Perkiraan : #{@perkiraan.errors[:acno].first}" %></div>
+	  <% end %>
+	  <div class="field">
+	  	<%= j.label :Kode_Account %>
+	  	<%= j.text_field :acno, class: 'form-control' , type: 'text', placeholder: 'Ex.1100.0000', autofocus: true, :"required"=>"" %>
+	  </div>
+
+	  <div class="field">
+	  	<%= j.label :Nama_Perkiraaan %>
+	  	<%= j.text_field :nama_perkiraan, class: 'form-control' , type: 'text', placeholder: 'Ex.Buku Besar', autofocus: true, :"required"=>"", :"data-parsley-minlength"=>"6" %>
+	  </div>
+
+ 	  <div class="field">
+	    <%= j.label :Level_Laporan %>
+	    <%= j.text_field :level_view, class: 'form-control' , type: 'number', placeholder: 'Ex.1', autofocus: true %>
+	  </div>
+	  <div class="row">
+	  	<div class="field">
+		    <div class="col-sm"><%= j.label :Pos_Laporan %></div>
+		    <div class="col-sm"><%= j.select(:buku, S3var::POS_BUKU,{},{class: "form-control input-group-prepend custom-select"}) %></div>
+		</div>
+	  	<div class="field">
+		    <div class="col-sm"><%= j.label :Jurnal %></div>
+		    <div class="col-sm"><%= j.select(:ac_detail, S3var::POS_JURNAL,{},{class: "form-control input-group-prepend custom-select"}) %></div>
+		</div>
+	  	<div class="field">
+		    <div class="col-sm"><%= j.label :Pos_Nilai %></div>
+		    <div class="col-sm"><%= j.select(:normal_balance, S3var::POS_NILAI,{},{class: "form-control input-group-prepend custom-select"}) %></div>
+		</div>
+	   	<div class="field">
+		    <div class="col-sm"><%= j.label :Order_Laporan %></div>
+		    <div class="col-sm"><%= j.text_field :sticky_order_view, class: 'form-control' , type: 'text' %></div>
+		</div>
+	    <div class="field">
+		    <div class="col-sm"><%= j.label :Prioritas_Audit %></div>
+		    <div class="col-sm"><%= j.text_field :sticky_order_audit, class: 'form-control' , type: 'text' %></div>
+		</div>
+	  </div>
+	  <br>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses %></div>
+	    <div class="col-sm"><%= link_to "Batal", perkiraans_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+</div>
+</div>
+</div>
+</div>

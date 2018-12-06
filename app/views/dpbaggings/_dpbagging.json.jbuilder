@@ -1,0 +1,2 @@
+json.extract! dpbagging, :id, :kegiatan, :tanggal, :bagging_id, :noref, :droppoint_asal, :kg_asal, :awb_asal, :tanggal_kirim, :manifest_id, :tanggal_terima, :droppoint_terima, :kg_terima, :awb_terima, :selisih_kg, :selisih_awb, :fresh_paket, :description, :tanggal_approve, :user_approve, :user_add, :user_edit, :ip_address, :flag, :created_at, :updated_at
+json.url dpbagging_url(dpbagging, format: :json)

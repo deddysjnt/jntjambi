@@ -1,0 +1,38 @@
+
+<%= simple_form_for @pack, wrapper: :horizontal_form do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :manifest_id %>
+            <%= f.input :tujuan, as: :radio_buttons, collection: S3var::INEX, wrapper: :horizontal_collection_inline %>
+            <%= f.input :agent_tujuan %>
+            <%= f.input :droppoint_tujuan %>
+            <%= f.input :nomor_bagging %>
+            <%= f.input :kg_fisik %>
+            <%= f.input :awb_fisik %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card card-border-color card-border-color-success">
+          <div class="card-body">
+            <%= f.input :droppoint_id %>
+            <%= f.input :tanggal %>
+            <%= f.input :team_shift, as: :radio_buttons, collection: S3var::SHIFT, wrapper: :horizontal_collection_inline %>
+            <%= f.input :team_kerja %>
+            <%= f.input :description %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

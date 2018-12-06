@@ -1,0 +1,69 @@
+<%# if @jabatan.errors.any? %>
+	<%# @jabatan.errors.full_messages.each do |pesanerr| %>
+		<%#= pesanerr, class: "alert alert-danger" %>
+	<%# end %> 
+<%# end %>
+
+	<%= form_for @jabatan do |j| %>
+	  <div class="row">
+	    <div class="col-2">Nama Jabatan</div>
+	    <div class="col-4"><%= j.text_field :nama_jabatan, class: 'form-control' , type: 'text', placeholder: 'Ex.Finance', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	  	<div class="col-2">Nama Jabatan Pusat</div>
+	    <div class="col-4"><%= j.text_field :nama_jabatan_pusat, class: 'form-control nama_jabatan_pusat_to_jabatanpusat_id' , type: 'text', autofocus: true %></div>
+	    <%= j.hidden_field :jabatanpusat_id, class: 'jabatanpusat_id' %>	  	
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Divisi Kerja</div>
+	    <div class="col-4"><%= j.select(:divisi_kerja, S3var::DIVISI_KERJA,{},{class: "input-group-prepend custom-select", autofocus: true}) %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Gaji Masa Training</div>
+	    <div class="col-4"><%= j.number_field :gapok_training, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-2">Gaji Karyawan Tetap</div>
+	    <div class="col-4"><%= j.number_field :gapok_tetap, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-2">Tunjangan Jabatan</div>
+	    <div class="col-4"><%= j.number_field :tunjangan_jabatan, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col-2">Tunjangan Masa Kerja</div>
+	    <div class="col-4"><%= j.number_field :tunjangan_masa_kerja, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+		
+		<div class="row dropdown-divider divider"></div>
+	  
+	  <div class="row">
+	    <div class="col-2">Nilai Claim BBM</div>
+	    <div class="col-2"><%= j.number_field :claim_bbm_set, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Limit Pulsa 1 Bulan</div>
+	    <div class="col-2"><%= j.number_field :claim_pulsa_limit_1bulan, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Limit Service 3 Bulan</div>
+	    <div class="col-2"><%= j.number_field :claim_service_limit_3bulan, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Limit Service 6 Bulan</div>
+	    <div class="col-2"><%= j.number_field :claim_service_limit_6bulan, class: 'form-control' , type: 'number', autofocus: true %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-2">Limit Service 12 Bulan</div>
+	    <div class="col-2"><%= j.number_field :claim_service_limit_12bulan, class: 'form-control' , type: 'number', autofocus: true %></div>
+	    <br>
+	    <div class="col-3 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", jabatans_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
+

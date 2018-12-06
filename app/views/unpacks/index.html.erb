@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Unpacks</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Droppoint</th>
+      <th>Sumber</th>
+      <th>Tanggal</th>
+      <th>Manifest</th>
+      <th>Nomor smu</th>
+      <th>Droppoint asal</th>
+      <th>Agent asal</th>
+      <th>Nomor bagging</th>
+      <th>Kg fisik</th>
+      <th>Awb fisik</th>
+      <th>Kg e3</th>
+      <th>Awb e3</th>
+      <th>Team shift</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unpacks.each do |unpack| %>
+      <tr>
+        <td><%= unpack.droppoint_id %></td>
+        <td><%= unpack.sumber %></td>
+        <td><%= unpack.tanggal %></td>
+        <td><%= unpack.manifest_id %></td>
+        <td><%= unpack.nomor_smu %></td>
+        <td><%= unpack.droppoint_asal %></td>
+        <td><%= unpack.agent_asal %></td>
+        <td><%= unpack.nomor_bagging %></td>
+        <td><%= unpack.kg_fisik %></td>
+        <td><%= unpack.awb_fisik %></td>
+        <td><%= unpack.kg_e3 %></td>
+        <td><%= unpack.awb_e3 %></td>
+        <td><%= unpack.team_shift %></td>
+        <td><%= link_to 'Show', unpack %></td>
+        <td><%= link_to 'Edit', edit_unpack_path(unpack) %></td>
+        <td><%= link_to 'Destroy', unpack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Unpack', new_unpack_path %>

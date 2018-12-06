@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ware Houses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Gudang</th>
+      <th>Qty in</th>
+      <th>Qty out</th>
+      <th>Open disc</th>
+      <th>Harga jual grosir</th>
+      <th>Harga jual retail</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ware_houses.each do |ware_house| %>
+      <tr>
+        <td><%= ware_house.product %></td>
+        <td><%= ware_house.gudang %></td>
+        <td><%= ware_house.qty_in %></td>
+        <td><%= ware_house.qty_out %></td>
+        <td><%= ware_house.open_disc %></td>
+        <td><%= ware_house.harga_jual_grosir %></td>
+        <td><%= ware_house.harga_jual_retail %></td>
+        <td><%= link_to 'Show', ware_house %></td>
+        <td><%= link_to 'Edit', edit_ware_house_path(ware_house) %></td>
+        <td><%= link_to 'Destroy', ware_house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ware House', new_ware_house_path %>

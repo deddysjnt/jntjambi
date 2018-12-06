@@ -1,0 +1,51 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider row">
+		<div class="col-9 card-subtitle">Pemakaiaan BBM</div>
+		<div class="col-sm card-subtitle"><%= link_to "New ISI BBM", new_glbbm_path, class: $s3sukses %></div>
+	</div>
+<div class="card-body">
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Tanggal</th>
+			<th>Nopol</th>
+			<th>Spec</th>
+			<th class="text-right">Km Lama</th>
+			<th class="text-right">Km Isi</th>
+			<th>Jenis</th>
+			<th class="text-right">Liter</th>
+			<th class="text-right">Biaya</th>
+			<th>Kas</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @glbbms.each do |j| %>
+		<tr>
+			<td><%= j.tanggal.strftime("%d/%m/%Y") %></td>
+			<td><%= j.kendaraan.try(:nopol) %></td>
+			<td><%= j.kendaraan.try(:spec_mobil) %></td>
+			<td class="text-right"><%= number_with_delimiter j.km_lama %></td>
+			<td class="text-right"><%= number_with_delimiter j.km_baru %></td>
+			<td><%= j.jenis_bbm %></td>
+			<td class="text-right"><%= number_with_delimiter j.liter %></td>
+			<td class="text-right"><%= number_with_delimiter j.biaya_bbm %></td>
+			<td><%= j.nama_perkiraan %></td>
+			<td><%= link_to "Edit", edit_glbbm_path(j.id) %></td>
+			<td><%= link_to "Delete", glbbm_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.kendaraan.try(:nopol)}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @glbbms %>
+	<%= link_to 'Back', root_path %>
+</div>
+</div>
+</div>
+</div>
+</div>

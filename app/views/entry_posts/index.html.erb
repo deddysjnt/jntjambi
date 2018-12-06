@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Monitoring Nomor Nota</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Transaksi</th>
+      <th>Last num</th>
+      <th>Format key</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entry_posts.each do |entry_post| %>
+      <tr>
+        <td><%= entry_post.transaksi %></td>
+        <td><%= entry_post.last_num %></td>
+        <td><%= entry_post.format_key %></td>
+        <td><%= link_to 'Show', entry_post %></td>
+        <td><%= link_to 'Edit', edit_entry_post_path(entry_post) %></td>
+        <td><%= link_to 'Destroy', entry_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Entry Post', new_entry_post_path %><br>
+<%= link_to 'Back', root_path %>

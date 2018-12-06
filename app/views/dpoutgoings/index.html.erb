@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dpoutgoing</h1>
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+  <thead class="thead-success">
+    <tr>
+      <th>Nomor</th>
+      <th>Karyawan</th>
+      <th>Droppoint</th>
+      <th>Tanggal</th>
+      <th>Transaksi</th>
+      <th>Awb total</th>
+      <th>Uang masuk</th>
+      <th>Perkiraan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dpoutgoings.each do |dpoutgoing| %>
+      <tr>
+        <td><%= dpoutgoing.nomor %></td>
+        <td><%= dpoutgoing.karyawan_id %></td>
+        <td><%= dpoutgoing.droppoint_id %></td>
+        <td><%= dpoutgoing.tanggal %></td>
+        <td><%= dpoutgoing.transaksi %></td>
+        <td><%= dpoutgoing.awb_total %></td>
+        <td><%= dpoutgoing.uang_masuk %></td>
+        <td><%= dpoutgoing.perkiraan_id %></td>
+        <td><%= link_to 'Show', dpoutgoing %></td>
+        <td><%= link_to 'Edit', edit_dpoutgoing_path(dpoutgoing) %></td>
+        <td><%= link_to 'Destroy', dpoutgoing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'New Dpoutgoing', new_dpoutgoing_path %>

@@ -1,0 +1,2 @@
+class GtwStmp < ApplicationRecord
+end

@@ -1,0 +1,50 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider row">
+		<div class="col-9 card-subtitle">Daftar Product</div>
+		<div class="col-sm card-subtitle"><%= link_to "New Product", new_product_path, class: $s3sukses %></div>
+	</div>
+<div class="card-body">
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-dark">
+		<tr>
+			<th>Nama Barang</th>
+			<th>Barcode</th>
+			<th>Satuan</th>
+			<th>Tipe</th>
+			<th>Keterangan</th>
+			<th class="text-right">Stok</th>
+			<th>Satuan</th>
+			<th class="text-right">Harga Rata</th>
+			<th>Kategori</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |j| %>
+		<tr>
+			<td><%= j.product_name %></td>
+			<td><%= j.barcode %></td>
+			<td><%= j.satuan %></td>
+			<td><%= j.tipe %></td>
+			<td><%= j.description %></td>
+			<td class="text-right"><%= number_with_delimiter j.stok %></td>
+			<td><%= j.satuan %></td>
+			<td class="text-right"><%= number_with_delimiter j.harga_rata %></td>
+			<td><%= j.category_name %></td>
+			<td><%= link_to "Edit", edit_product_path(j.id) %></td>
+			<td><%= link_to "Delete", product_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.product_name}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @products %>
+	<%= link_to "Back", root_path %>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,2 @@
+class Gudang < ApplicationRecord
+end

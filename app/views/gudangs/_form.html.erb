@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@gudang) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :droppoint %>
+    <%= f.input :nama_gudang %>
+    <%= f.input :area_layanan %>
+    <%= f.input :kota %>
+    <%= f.input :kecamatan %>
+    <%= f.input :alamat %>
+    <%= f.input :no_telp %>
+    <%= f.input :mobile_phone %>
+    <%= f.input :contact %>
+    <%= f.input :email %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

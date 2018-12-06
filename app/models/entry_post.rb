@@ -1,0 +1,2 @@
+class EntryPost < ApplicationRecord
+end

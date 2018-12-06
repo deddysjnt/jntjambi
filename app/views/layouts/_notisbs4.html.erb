@@ -1,0 +1,9 @@
+<% if flash.any? %>
+	<div id="notice_wrapper">
+		<div class="notice">
+			<% flash.each do |key, value| %>
+		        <p><%= value %></p>
+			<% end %>
+		</div>
+	</div>
+<% end %>

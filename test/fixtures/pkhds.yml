@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  droppoint: 
+  nomor: MyString
+  no_ref: MyString
+  tanggal: 2018-12-01 00:53:09
+  description: MyText
+  tanggal_approve: 2018-12-01 00:53:09
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1
+
+two:
+  droppoint: 
+  nomor: MyString
+  no_ref: MyString
+  tanggal: 2018-12-01 00:53:09
+  description: MyText
+  tanggal_approve: 2018-12-01 00:53:09
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1

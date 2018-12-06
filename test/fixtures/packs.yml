@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  droppoint_id: 1
+  tanggal: 2018-11-30 05:05:47
+  manifest_id: MyString
+  tujuan: MyString
+  agent_tujuan: 1
+  droppoint_tujuan: 1
+  nomor_bagging: 1
+  kg_fisik: 1
+  awb_fisik: 1
+  team_kerja: MyText
+  team_shift: 1
+  description: MyText
+  tanggal_approve: 2018-11-30 05:05:47
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1
+
+two:
+  droppoint_id: 1
+  tanggal: 2018-11-30 05:05:47
+  manifest_id: MyString
+  tujuan: MyString
+  agent_tujuan: 1
+  droppoint_tujuan: 1
+  nomor_bagging: 1
+  kg_fisik: 1
+  awb_fisik: 1
+  team_kerja: MyText
+  team_shift: 1
+  description: MyText
+  tanggal_approve: 2018-11-30 05:05:47
+  user_approve: 1
+  user_add: 1
+  user_edit: 1
+  ip_address: MyString
+  flag: 1

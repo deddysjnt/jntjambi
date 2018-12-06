@@ -1,0 +1,63 @@
+<div class="row">
+<div class="col-md-12">
+<div class="card text-white bg-dark card-border-color card-border-color-primary">
+	<div class="card-header card-header-divider row">
+		<div class="col-9 card-subtitle"><h3>Monitoring Setoran Sprinter</h2></div>
+		<div class="col-sm card-subtitle"><%= link_to "Input Setoran Baru", new_sprinter_kembali_path, class: $s3sukses %></div>
+	</div>
+<div class="card-body">
+
+<div class="table-responsive-sb">
+<table class="table table-bordered table-hover">
+	<thead class="thead-success">
+		<tr>
+			<th>Tanggal</th>
+			<th>DP</th>
+			<th>Sprinter</th>
+			<th class="text-right">Bawa</th>
+			<th class="text-right">Gagal</th>
+			<th class="text-right">Sukses</th>
+			<th class="text-right">Tr</th>
+			<th class="text-right">%</th>
+			<th class="text-right">Poin</th>			
+			<th class="text-right">Jarak</th>
+			<th class="text-right">Uang Masuk</th>
+			<th class="text-right">Uang Bbm</th>
+			<th class="text-right">B.Lain</th>
+			<th class="text-right">Setoran Kas</th>
+			<th>Kasir</th>
+			<th>View</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @sprinter_kembalis.each do |j| %>
+		<tr>
+			<td><%= j.tanggal.try(:strftime, ("%d/%m/%Y")) %></td>
+			<td><%= j.nama_dp %></td>
+			<td><%= j.nama_karyawan %></td>
+			<td class="text-right"><%= number_with_delimiter j.awb_bawa %></td>
+			<td class="text-right"><%= number_with_delimiter j.awb_gagal %></td>
+			<td class="text-right"><%= number_with_delimiter j.awb_sukses %></td>
+			<td class="text-right"><%= number_with_delimiter j.target_set %></td>
+			<td class="text-right"><%= number_with_delimiter (j.awb_sukses*100/j.target) %></td>
+			<td class="text-right"><%= number_with_delimiter j.point %></td>			
+			<td class="text-right"><%= number_with_delimiter j.km_stop-j.km_start %></td>
+			<td class="text-right"><%= number_with_delimiter j.uang_masuk %></td>
+			<td class="text-right"><%= number_with_delimiter j.biaya_bbm %></td>
+			<td class="text-right"><%= number_with_delimiter j.biaya_lain %></td>
+			<td class="text-right"><%= number_with_delimiter j.uang_masuk-j.biaya_bbm-j.biaya_lain %></td>
+			<td><%= j.nama_perkiraan %></td>
+			<td><%= link_to "View", edit_sprinter_kembali_path(j.id) %></td>
+			<td><%= link_to "Delete", sprinter_kembali_path(j.id), method: :delete, data: {confirm: "Anda yakin mau hapus data #{j.karyawan_id} #{j.nama_karyawan} #{j.awb_bawa}?"} %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+	<%= paginate @sprinter_kembalis %>
+	<%= link_to "Back", root_path %>
+</div>
+</div>
+</div>
+</div>
+</div>

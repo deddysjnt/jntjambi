@@ -1,0 +1,75 @@
+	<%= form_for @karyawan do |j| %>
+
+	  <% if @karyawan.errors[:nama_karyawan].any? %>
+	  	<div class = "row alert alert-danger"><%= "Nama Karyawan : #{@karyawan.errors[:nama_karyawan].first}" %></div>
+	  <% end %>
+	  <div class="row">
+	    <div class="col-3">Nama Karyawan</div>
+	    <div class="col-4"><%= j.text_field :nama_karyawan, class: 'form-control' , type: 'text', placeholder: 'Ex.Princess Madelyn', autofocus: true, :"required"=>"", :"data-parsley-minlength"=>"6" %></div>
+		<div class="col-2">Tanggal_Lahir</div>
+	    <div class="col-sm"><%= j.date_field :tanggal_lahir, class: 'form-control datepicker', type: "text", autofocus: true %></div>
+	  </div>
+ 	  <div class="row">
+	    <div class="col-3">Nomor Iinduk Karywan</div>
+	    <div class="col-4"><%= j.text_field :nik, class: 'form-control' , type: 'text', placeholder: 'Ex.J18170058', autofocus: true %></div>
+	    <div class="col-2">Jenis Kelamin</div>
+	    <div class="col-sm"><%= j.select(:jenis_kelamin, S3var::JENIS_KELAMIN,{},{class: "input-group-prepend custom-select", autofocus: true}) %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Nomor Kartu Penduduk</div>
+	    <div class="col-4"><%= j.text_field :ktp, class: 'form-control' , type: 'text', placeholder: 'Ex.12345678903344556677', autofocus: true %></div>
+	    <div class="col-2">Agama</div>
+	    <div class="col-sm"><%= j.select(:agama, S3var::AGAMA,{},{class: "input-group-prepend custom-select", autofocus: true}) %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Tanggal Masuk</div>
+	    <div class="col-4"><%= j.date_field :tanggal_masuk, class: 'form-control datepicker', type: "text", autofocus: true %></div>
+	    <div class="col-2">Lokasi Berkas</div>
+	    <div class="col-sm"><%= j.text_field :lokasi_berkas, class: 'form-control' , type: 'text', placeholder: 'Ex.Map Kuning No.001', autofocus: true %></div>	  
+	  </div>
+
+	  <div class="row">
+	    <div class="col-3">Tanggal Penempatan</div>
+	    <div class="col-4"><%= j.date_field :tanggal_mutasi, class: 'form-control datepicker', type: "text" %></div>
+	    <div class="col-2">ID Bpjs-T</div>
+		<div class="col-sm"><%= j.text_field :bpjs_tk, class: 'form-control' , type: 'text', autofocus: true %></div>	  
+	  </div>
+
+	  <div class="row">
+	    <div class="col-3">Resign</div>
+	    <div class="col-4"><%= j.date_field :tanggal_resign, class: 'form-control datepicker', type: "text" %></div>
+	    <div class="col-2">ID Bpjs-K</div>
+		<div class="col-sm"><%= j.text_field :bpjs_ks, class: 'form-control' , type: 'text', autofocus: true %></div>	
+	  </div>
+	  <div class="row">
+	  	<div class="col-3">Alamat</div>
+	    <div class="col-4"><%= j.text_area :alamat, :cols => 30, :rows => 3, class: "form-control" %></div>
+	    <div class="col-2">Rekening</div>
+		<div class="col-2"><%= j.text_field :norek, class: 'form-control' , type: 'text', autofocus: true %></div>
+		<div class="col-1"><%=j.select(:bank, S3var::BANK,{},{class: "input-group-prepend custom-select", autofocus: true}) %></div>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">Droppoint</div>
+	    <div class="col-4"><%= j.text_field :nama_dp, class: 'form-control nama_dp_to_droppoint_id' , type: 'text', autofocus: true %></div>
+	    <div class="col-2">Kasir Kas</div>
+		<div class="col-sm"><%= j.text_field :kasir_kas_name, class: 'form-control perkiraan_to_kasir_kas' , type: 'text', autofocus: true %></div>
+		<%= j.hidden_field :kasir_kas, class: 'kasir_kas' %>
+		<%= j.hidden_field :droppoint_id, class: 'droppoint_id' %>
+	  </div>
+	  <div class="row">
+	    <div class="col-3">ID Jabatan</div>
+	    <div class="col-4"><%= j.text_field :nama_jabatan, class: 'form-control nama_jabatan_to_jabatan_id' , type: 'text', autofocus: true %></div>
+	    <div class="col-2">ID Jabatan Pusat</div>
+	    <div class="col-sm"><%= j.text_field :nama_jabatan_pusat, class: 'form-control nama_jabatan_pusat_to_jabatanpusat_id' , type: 'text', autofocus: true %></div>
+	    <%= j.hidden_field :jabatan_id, class: 'jabatan_id' %>
+			<%= j.hidden_field :jabatanpusat_id, class: 'jabatanpusat_id' %>
+	  </div>
+    <br>
+	<div class="row"></div>
+	  <div class="row">
+	    <div class="col-7 dropdown-divider divider"></div>
+	    <div class="col-sm"><%= j.submit "Simpan Data", class: $s3sukses, autofocus: true %></div>
+	    <div class="col-sm"><%= link_to "Batal", karyawans_path,class: $s3blue %></div>
+	  </div>
+
+	<% end %>
